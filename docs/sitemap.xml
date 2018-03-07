@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/7646/python/</loc>
+    <lastmod>2018-03-06T20:09:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/42/</loc>
+    <lastmod>2018-03-06T20:06:52-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/7646/statistical-analysis-of-time-series-data/</loc>
+    <lastmod>2018-03-06T20:09:17-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/7646/</loc>
+    <lastmod>2018-03-06T20:07:06-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/7646/essential-economics/</loc>
+    <lastmod>2018-03-06T20:09:26-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6242/</loc>
+    <lastmod>2018-03-06T20:07:33-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/7646/machine-learning-algorithms/</loc>
+    <lastmod>2018-03-06T20:09:32-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6601/</loc>
+    <lastmod>2018-03-06T20:07:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/7641/</loc>
+    <lastmod>2018-03-06T20:08:06-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6476/</loc>
+    <lastmod>2018-03-06T20:08:43-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6750/</loc>
+    <lastmod>2018-03-06T20:08:51-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6460/</loc>
+    <lastmod>2018-03-06T20:09:01-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-03-06T20:09:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
