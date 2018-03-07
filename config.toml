@@ -7,6 +7,7 @@ theme = "hugo-theme-learn"
 themesdir = "themes/"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
+publishDir = "docs"
 
 [params]
   editURL = "https://github.com/kirkbrunson/omsnotes/edit/master/content/"
