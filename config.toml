@@ -1,3 +1,21 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = ""
+languageCode = "en-US"
+defaultContentLanguage = "en"
+
+title = "OMS Notes"
+theme = "hugo-theme-learn"
+themesdir = "themes/"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
+[params]
+  editURL = "https://github.com/kirkbrunson/omsnotes/edit/master/content/"
+  description = "Documentation for Georgia Tech's OMSCS"
+  author = "Kirk Brunson"
+  showVisitedLinks = false
+  disableLanguageSwitchingButton = true
+  themeVariant = "blue"
+  disableSearch = false
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
