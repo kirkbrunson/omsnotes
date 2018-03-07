@@ -30,6 +30,6 @@ Georgia Tech's online Master of Science in Computer Science (OMS CS) comprises a
 
 - OMSCS FAQ: [here](https://docs.google.com/document/d/1ZtWIxQht7OSfB0ey--U3pvI4pisfZsKo_usvLzlXBQo/edit#) and [here](https://www.reddit.com/r/OMSCS/wiki/index)
 - [Course Reviews](https://omscentral.com/)
-- [Awesome-OMSCS Repo](#)
+- [Awesome-OMSCS Repo](https://github.com/kirkbrunson/awesome-omscs)
 
 
