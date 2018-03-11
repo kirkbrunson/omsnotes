@@ -6,10 +6,20 @@
     <description>Recent content on OMS Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 06 Mar 2018 20:09:09 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 10 Mar 2018 20:20:20 -0500</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introduction</title>
+      <link>/6250/introduction/</link>
+      <pubDate>Sat, 10 Mar 2018 20:20:20 -0500</pubDate>
+      
+      <guid>/6250/introduction/</guid>
+      <description>Introduction: Welcome to Computer Networking We&amp;rsquo;ll be covering advanced concepts in networking such as software defined networking (SDN), data center networking (DCN) and content distribution. You&amp;rsquo;ll complete projects using a state of the art network emulator called mini-net to understand and explore these advanced concepts leading up to a final project replicating actual networking research.
+Computer Networking Welcome to the graduate course on computer networking. The primary goal of this course is to provide a survey of the necessary tools, techniques, and concepts to perform research in computer communications.</description>
+    </item>
     
     <item>
       <title>Python</title>
@@ -19,6 +29,17 @@
       <guid>/7646/python/</guid>
       <description>Python: Numpy &amp;amp; Pandas Dataframes A dataframe is a data structure in pandas that allows multiple datasets to be mapped to the same indices. For example, a data frame that maps dates to closing prices could be:
     SPY AAPL GOOG GLD     2000-01-09 101.01 50.89 NaN NaN   2000-01-10 100.05 50.91 NaN NaN   &amp;hellip; &amp;hellip; &amp;hellip; &amp;hellip; &amp;hellip;   2015-12-31 200.</description>
+    </item>
+    
+    <item>
+      <title>Architecture and Principles</title>
+      <link>/6250/architecture-and-principles/</link>
+      <pubDate>Sat, 10 Mar 2018 20:31:22 -0500</pubDate>
+      
+      <guid>/6250/architecture-and-principles/</guid>
+      <description>Architecture &amp;amp; Principles We&amp;rsquo;ll begin our foray into networking by reviewing the history of the internet and its design principles. Networking today is an eclectic mix of theory and practice in large part because the early internet architects set out with clear goals and allowed flexibility in achieving them.
+With all that flexibility, does that mean we&amp;rsquo;ll see the rollout of IPv6 soon? Only in your dreams.
+A Brief History of the Internet In this lesson we will cover a brief history of the internet.</description>
     </item>
     
     <item>
@@ -32,6 +53,17 @@ Global statistics For example, if you had a dataframe df1 which had the closing 
     </item>
     
     <item>
+      <title>Switching</title>
+      <link>/6250/switching/</link>
+      <pubDate>Sat, 10 Mar 2018 20:53:59 -0500</pubDate>
+      
+      <guid>/6250/switching/</guid>
+      <description>Switching At its core, a network serves to route packets between machines on the network. Let&amp;rsquo;s take a look at how packets are moved across networks. It&amp;rsquo;s more complicated than it sounds at first, but quite fascinating.
+That&amp;rsquo;s right. To even reach your screen, the packets that make up this video likely traveled across at least four or five networks, if not more.
+You&amp;rsquo;ll learn how that works in the routing videos on BGP, a routing protocol.</description>
+    </item>
+    
+    <item>
       <title>Essential Economics</title>
       <link>/7646/essential-economics/</link>
       <pubDate>Tue, 06 Mar 2018 20:09:26 -0500</pubDate>
@@ -39,6 +71,17 @@ Global statistics For example, if you had a dataframe df1 which had the closing 
       <guid>/7646/essential-economics/</guid>
       <description>Essential Economics This chapter discusses terminology, stock market dynamics, and important indicators in economics. This will allow us to more accurately judge the value of an economic decision and make predictions on the market.
 Funds We’ll discuss three different types of funds: Exchange-Traded Fund (ETF), mutual funds, and hedge funds. Different types of funds are governed under different rules. ETFs are similar to stocks in that they are bought and sold at will like stocks- very liquid.</description>
+    </item>
+    
+    <item>
+      <title>Routing</title>
+      <link>/6250/routing/</link>
+      <pubDate>Sat, 10 Mar 2018 21:07:36 -0500</pubDate>
+      
+      <guid>/6250/routing/</guid>
+      <description>Routing Overview With your head wrapped around routing we&amp;rsquo;ll now take a look at the nuts and bolts that make routing possible: naming, addressing and forwarding.
+And you&amp;rsquo;ll start your first significant Mininet project. In the project you&amp;rsquo;ll investigate switched buffer sizing which can have an important effect on network performance.
+Internet Routing The next few lessons will cover internet routing. Contrary to what you might think, the internet is not a single network, but rather a collection of tens of thousands of independently operated networks, or autonomous systems, sometimes simply called ASes.</description>
     </item>
     
     <item>
