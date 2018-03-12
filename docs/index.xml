@@ -94,5 +94,42 @@ Internet Routing The next few lessons will cover internet routing. Contrary to w
 So we use machine learning to take historical data and generate a model.</description>
     </item>
     
+    <item>
+      <title>Naming Addressing and Forwarding</title>
+      <link>/6250/naming-addressing-and-forwarding/</link>
+      <pubDate>Sun, 11 Mar 2018 19:59:19 -0400</pubDate>
+      
+      <guid>/6250/naming-addressing-and-forwarding/</guid>
+      <description>Naming, Addressing &amp;amp; Forwarding IP Addressing In this lesson we will be covering IP addressing. In particular we will be covering IPv4 address structure and allocation. IP stands for Internet Protocol, and version four is the version of the protocol that is widely deployed on the Internet to date. Each IP address is a 32-bit number. And that 32-bit number is formatted in what is called dotted quad notation. For example, the IP address for http://www.</description>
+    </item>
+    
+    <item>
+      <title>Router Design</title>
+      <link>/6250/router-design/</link>
+      <pubDate>Sun, 11 Mar 2018 20:21:10 -0400</pubDate>
+      
+      <guid>/6250/router-design/</guid>
+      <description>Router Design In this lesson, we will cover the design of big, fast, modern routers. Here&amp;rsquo;s a picture of two modern router chassis. On the left, we have a picture of the Cisco CRS-1, and on the right, we have a picture of the Juniper M320. The M320 has for some time been used at the border of the Georgia Tech network between Georgia Tech and the rest of the Internet.</description>
+    </item>
+    
+    <item>
+      <title>DNS</title>
+      <link>/6250/dns/</link>
+      <pubDate>Sun, 11 Mar 2018 20:26:43 -0400</pubDate>
+      
+      <guid>/6250/dns/</guid>
+      <description>DNS: Domain Name System Domain Name System Part 1 We&amp;rsquo;ll now have a look at the domain name system or DNS. The purpose of the domain name system is to map human readable names such http://www.gatech.edu to IP addresses such as 130.207.160.173. A name such as this is human readable and much easier to remember and type than an IP address. But in fact, the IP address is what&amp;rsquo;s needed to send traffic to the intended destination.</description>
+    </item>
+    
+    <item>
+      <title>Congestion Control and Streaming</title>
+      <link>/6250/congestion-control-and-streaming/</link>
+      <pubDate>Sun, 11 Mar 2018 20:33:32 -0400</pubDate>
+      
+      <guid>/6250/congestion-control-and-streaming/</guid>
+      <description>Lecture 6: Congestion Control, &amp;amp; Streaming In this section of the course we&amp;rsquo;ll learn about resource control and content distribution. Resource control deals with handling bandwidth constraints on links. And in this first section, we&amp;rsquo;ll focus on controlling congestion along links. To learn more about TCPA and congestion control, your Mininet project will explore what happens when congestion control goes wrong.
+Congestion Control Okay, we&amp;rsquo;re starting course two on congestion control and streaming.</description>
+    </item>
+    
   </channel>
 </rss>

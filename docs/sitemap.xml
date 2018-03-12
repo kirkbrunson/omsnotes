@@ -63,8 +63,28 @@
   </url>
   
   <url>
+    <loc>/6250/naming-addressing-and-forwarding/</loc>
+    <lastmod>2018-03-11T19:59:19-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/7641/</loc>
     <lastmod>2018-03-06T20:08:06-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6250/router-design/</loc>
+    <lastmod>2018-03-11T20:21:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6250/dns/</loc>
+    <lastmod>2018-03-11T20:26:43-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6250/congestion-control-and-streaming/</loc>
+    <lastmod>2018-03-11T20:33:32-04:00</lastmod>
   </url>
   
   <url>
