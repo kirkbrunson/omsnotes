@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/7646/machine-learning-algorithms/">
+  <body class="" data-url="/6250/denial-of-service-dos/">
     <nav id="sidebar" class="">
 
 
@@ -96,7 +96,7 @@
   
     
     <li data-nav-id="/7646/" title="7646" class="dd-item 
-        parent
+        
         
         
         ">
@@ -177,7 +177,7 @@
  
   
     
-      <li data-nav-id="/7646/machine-learning-algorithms/" title="Machine Learning Algorithms" class="dd-item active">
+      <li data-nav-id="/7646/machine-learning-algorithms/" title="Machine Learning Algorithms" class="dd-item ">
         <a href="/7646/machine-learning-algorithms/">
         Machine Learning Algorithms
         
@@ -336,7 +336,7 @@
   
     
     <li data-nav-id="/6250/" title="6250" class="dd-item 
-        
+        parent
         
         
         ">
@@ -664,7 +664,7 @@
  
   
     
-      <li data-nav-id="/6250/denial-of-service-dos/" title="Denial of Service DoS" class="dd-item ">
+      <li data-nav-id="/6250/denial-of-service-dos/" title="Denial of Service DoS" class="dd-item active">
         <a href="/6250/denial-of-service-dos/">
         Denial of Service DoS
         
@@ -713,7 +713,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Improve this page' href="https://github.com/kirkbrunson/omsnotes/edit/master/content/7646/machine-learning-algorithms.md" target="blank">
+                    <a class="github-link" title='Improve this page' href="https://github.com/kirkbrunson/omsnotes/edit/master/content/6250/Denial-of-Service-DoS.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       <span id="top-github-link-text">Improve this page</span>
                     </a>
@@ -742,7 +742,7 @@
             
           
           
-            <a href='/'></a> > <a href='/7646/'>7646</a> > Machine Learning Algorithms
+            <a href='/'></a> > <a href='/6250/'>6250</a> > Denial of Service DoS
           
          
           
@@ -756,32 +756,20 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li><a href="#machine-learning-algorithms">Machine Learning Algorithms</a>
+<li>
 <ul>
-<li><a href="#regression-and-modeling">Regression and Modeling</a></li>
-<li><a href="#assessing-a-model">Assessing a Model</a></li>
-<li><a href="#types-of-learners">Types of Learners</a></li>
-<li><a href="#reinforcement-learning">Reinforcement Learning</a>
+<li><a href="#denial-of-service-attacks-overview">Denial of Service Attacks Overview</a></li>
+<li><a href="#tcp-3-way-handshake-review">TCP 3-Way Handshake Review</a>
 <ul>
-<li><a href="#markov-decision-problems">Markov Decision Problems</a></li>
+<li><a href="#tcp-syn-cookie-quiz">TCP SYN Cookie Quiz</a></li>
+<li><a href="#tcp-syn-cookie-quiz-answer">TCP SYN Cookie Quiz Answer</a></li>
 </ul></li>
-<li><a href="#q-learning">Q-Learning</a>
+<li><a href="#inferring-denial-of-service-using-backscatter">Inferring Denial of Service using Backscatter</a>
 <ul>
-<li><a href="#how-do-we-use-q">How do we use Q?</a></li>
-<li><a href="#how-do-we-get-q">How do we get Q?</a></li>
-<li><a href="#exploration">Exploration</a></li>
+<li><a href="#backscatter-quiz">Backscatter Quiz</a></li>
+<li><a href="#backscatter-quiz-answer">Backscatter Quiz Answer</a></li>
 </ul></li>
-<li><a href="#q-learning-for-trading">Q-Learning for Trading</a>
-<ul>
-<li><a href="#discretization">Discretization</a></li>
-<li><a href="#problems-with-q-learning">Problems with Q-Learning</a></li>
-</ul></li>
-<li><a href="#dyna-q">Dyna-Q</a>
-<ul>
-<li><a href="#learning-t">Learning T</a></li>
-<li><a href="#learning-r">Learning R</a></li>
-<li><a href="#conclusion">Conclusion</a></li>
-</ul></li>
+<li><a href="#automated-denial-of-service-attack-mitigation">Automated Denial of Service Attack Mitigation</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -804,360 +792,149 @@
 
 
 
-<h1 id="machine-learning-algorithms">Machine Learning Algorithms</h1>
-
-<p>In most cases, machine learning algorithms are focused on building a model. Then, the
-model can be used to take inputs and give outputs based on the model. The model is a
-tool to predict outputs based on the inputs. In our case, we will be using models to take
-information about stocks and predict their future prices.</p>
-
-<p><img src="/7646/images/fig4.0.png" alt="ML_overview" /></p>
-
-<p>So we use machine learning to take historical data and generate a model. When we want
-to use it, we give the model observations, $\vec{x_i}$, and it gives us predictions, $y$. Examples of
-good inputs (predictive factors) are:</p>
-
-<ol>
-<li>Price momentum</li>
-<li>Bollinger value</li>
-<li>Current price</li>
-</ol>
-
-<p>while examples of outputs would be:</p>
-
-<ol>
-<li>Future price</li>
-<li>Future return</li>
-</ol>
-
-<p>We’ll first talk about Supervised Regression Learning.</p>
-
-<h2 id="regression-and-modeling">Regression and Modeling</h2>
-
-<p>Supervised Regression Learning means that we’ll provide (supervised learning) a bunch
-of example data <code>$(x, y)_i$</code> and allow the model to make a numerical prediction (regression).
-There are two main types of regression techniques:</p>
-
-<ul>
-<li>Linear regression (parametric)</li>
-<li>k-nearest neighbor (kNN) (instance-based), the more popular approach</li>
-<li>Decision trees</li>
-<li>Decision forests</li>
-</ul>
-
-<h2 id="assessing-a-model">Assessing a Model</h2>
-
-<p>Assessing a model is much like predicting prices as it uses indicators to judge the effectiveness
-of the model. The first indicator is root mean square error (RMSE), which is as follows</p>
-
-<div style="text-align: center;">
-  $\sqrt{\dfrac{\sum (ytest - ypredict)^2}{N}}$
-</div>
-
-<p>The error that is important is that of test data, which is outside of the training data. Typically
-60% of the data is used for training, and 40% is used for testing. However, sometimes
-there isn’t enough data to adequately evaluate a learning algorithm, in which case a method
-called <strong>cross validation</strong> is used. This method slices the data into chunks, typically fifths.
-One is chosen as test and the rest are for training, then a different chunk is chosen to be the
-test and another trial is run. For financial data, we don’t want to accidentally look forward
-in time, so we would only use <strong>roll forward cross validation</strong>. This simply demands that
-all the training data is before the test data.</p>
-
-<p>The second metric for how well an algorithm is working is the <strong>correlation</strong> of the test
-data and predicted values. Strong correlation, close to $\pm1$, indicates a good algorithm
-whereas a weak correlation, close to zero, indicates a poor algorithm. Correlation and
-RMSE are excellent indicators on how well an algorithm is doing, but we might also want
-to fine tune an algorithm; we want to answer the question ”when are we trying too hard
-to fit data?”. This is where <strong>overfitting</strong> comes into play. Overfitting is the point at which
-error for training data is decreasing while error for test data is increasing.</p>
-
-<p><img src="/7646/images/overfitting.png" alt="Overfitting" /></p>
-
-<h2 id="types-of-learners">Types of Learners</h2>
-
-<p><strong>Ensemble Learners</strong> Ensemble learners are composed of several different learners, which
-could include kNN, regression, and decision tree learners in one. The output of this learner
-is then simply a combination of the learners’ answers, which is typically an average of the
-outputs.</p>
-
-<p><strong>Bagging and Boosting</strong> Boot-strap aggregating, or <strong>bagging</strong>, only uses one algorithm,
-but many different models. If the training data is separated into learning instances where
-there’s a total of $n$ instances, then each model is fed a bag of these instances. Each bag is
-composed of $n&rsquo;$ learning instances that are randomly selected with replacement, so instances
-may show up more than once in the same bag. These are used to train m models and the
-result is the average of all the outputs. <strong>Boosting</strong> builds each subsequent bag based on the
-results of the last. Training data is also used to test the models, and a model’s predicted data
-showing significant error is weighted to more likely be in the next bag for the next model.
-The process is continued for the desired number of models, and the results are averaged.
-Although this could be advantageous in predicting outliers, it’s also more susceptible to
-overfitting.</p>
-
-<h2 id="reinforcement-learning">Reinforcement Learning</h2>
-
-<p>As seen in figure 4.1, reinforcement learning describes the interaction of a robot with its
-environment. The robot performs an action, which has an effect on the environment and
-changes its state. The robot observes the change in state and its associated reward and
-makes decisions to maximize that reward.</p>
-
-<p><img src="/7646/images/fig4.1.png" alt="RL_figure" /></p>
-
-<p>Reinforcement learning also describes the problem that is how to go about maximizing
-the reward. In the stock market, the reward is return on trades, and we want to find out
-how to maximize returns. This problem is complicated by time constraints. The value of
-future gains diminishes with time, so it’s unreasonable to use an infinite horizon on which
-to base returns. However, optimizing returns over too short a time may limit rewards from
-seeing a much larger overall gain.</p>
-
-<h3 id="markov-decision-problems">Markov Decision Problems</h3>
-
-<p>What we’ve been talking about is called a Markov decision problem. Here’s how the problem
-is formalized.</p>
-
-<p>We have:</p>
-
-<ul>
-<li>Set of states $S = {s1, &hellip; , s_n}$</li>
-<li>Set of actions $A = {a1, &hellip; , a_n}$</li>
-<li>Transition function $T[s, a, s_0]$</li>
-<li>Reward function $R[s, a]$</li>
-</ul>
-
-<p>What we’re trying to find is a policy $\pi(s)$ that will maximize the reward. Unfortunately,
-we don’t know the $T$ or $R$, since that’s defined by the environment. So, the learner has to
-interact with the world and see what happens. Based on the reward, it can start generating
-policies.</p>
-
-<p>A way to encode this information is using <strong>experience tuples</strong>. Experience tuples are as
-follows: given a state $s_1$ and an action $a_1$ that we took, we were put into state <code>$s'_1$</code> and got
-reward $r_1$. The tuple is shown like this:</p>
-
-<div style="text-align: center;">
-  $\langle s_1, a_1, s_1&#39;, r_1 \rangle$
-</div>
-
-<p>Now, we can rename $s_1&rsquo;$ to $s_2$, since that’s our new state, and then take a new action and
-see what happens, and we get a new tuple:</p>
-
-<div style="text-align: center;">
-  $\langle s_2, a_2, s_2&#39;, r_2 \rangle$
-</div>
-
-<p>And we repeat this for many different combinations of states and actions, and then we’ll
-use the tuples to generate the policy. There are two ways to generate the policy:</p>
-
-<ul>
-<li><strong>Model-based:</strong> For this method, we generate a model of $T[s, a, s_0]$ based on statistical
-analysis of the tuples. We look at a particular state and a particular action and see the
-probability of transitioning to another state. Same thing with $R[s, a]$. Then, we can use
-policy or value iteration to solve it.</li>
-<li><strong>Model-free:</strong> This method keeps the data around and uses the original tuples to determine
-what the new state will be for a certain action. This is Q-learning.</li>
-</ul>
-
-<h2 id="q-learning">Q-Learning</h2>
-
-<p>Q-Learning is a model-free approach, which means that it doesn’t need to have any sort
-of model of the transition function $T$ or the reward function $R$. It builds a table of <em>utility
-values</em> as the agent interacts with the world. These are the Q values. At each state, the
-agent can then use the Q values to select the best action. Q-Learning is guaranteed to give
-an optimal policy, as it is proven to always converge.</p>
-
-<p>$Q$ represents the value of taking action $a$ in state $s$. This value includes the immediate reward
-for taking action $a$, and the discounted (future) reward for all optimal future actions
-after having taken $a$.</p>
-
-<h3 id="how-do-we-use-q">How do we use Q?</h3>
-
-<p>What we want to find for a particular state is what policy, $\prod(s)$ we should take. Using Q
-values, all we need to do is find the maximum $Q$ value for that state.</p>
-
-<div style="text-align: center;">
-  $\prod(s) = \underset{a}{\arg\max}(Q[s,a])$
-</div>
-
-<p>So, we go through each action a and see which action has the maximum $Q$ value for state
-$s$. Eventually, after learning enough, the agent will converge to the optimal policy, <code>$\pi^*(s)$</code>,
-and optimal $Q$ table, <code>$Q^*[s, a]$</code>.</p>
-
-<h3 id="how-do-we-get-q">How do we get Q?</h3>
-
-<p>To use the Q table, first we must generate it by learning. How do we go about that? Well
-it’s similar to previous learning algorithms, in that we provide it training data for which we
-know the outcomes. We then iterate over time and take actions based on the current policy
-(Q values), and generate experience tuples $\langle s, a, s&rsquo;, r \rangle$  and generate the Q values based on the experience.</p>
-
-<p>In a more detailed fashion:</p>
-
-<ol>
-<li>Initialize the Q table with small random values</li>
-<li>Compute $s$</li>
-<li>Select $a$</li>
-<li>Observe $r, s$</li>
-<li>Update $Q$</li>
-<li>Step forward in time, then repeat from step 2.</li>
-</ol>
-
-<p>To update Q, we first need a formula to decide what it should be. What we can do is assign
-a <em>learning rate</em>, $\alpha$, to weight the new observations. We can therefore update $Q$like this:</p>
-
-<div style="text-align: center;">
-  $Q&#39;[s, a] = Q[s, a] &#43; \alpha(\textrm{improved estimate} - Q[s, a])$
-</div>
-
-<p>As you can see, $Q$ converges as the improved estimate is the same as the current estimate
-(we’re at the best $Q$). Now, we need to know what the improved estimate is:</p>
-
-<div style="text-align: center;">
-  $\textrm{improved estimate} = \textrm{immediate returns} &#43; (\textrm{discounted future rewards})$
-</div>
-
-<p>Then, replacing <em>discounted future rewards</em> with the actual way of calculating it, and rearranging
-to only use the current value of $Q$ once, we find that the formula to calculate the
-new value of $Q$ for a state-action pair hs, ai, the formula is:</p>
-
-<div style="text-align: center;">
-  $Q&#39;[s, a] = (1 - \alpha)Q[s, a] &#43; \alpha(r &#43; \gamma Q[s&#39;, \underset{a&#39;}{\arg\max}(Q[s&#39;, a&#39;])])$
-</div>
-
-<p>where:</p>
-
-<ul>
-<li>$r = R[s, a]$ is the immediate reward for taking an action $a$ in the state $s$</li>
-<li>$\gamma \in [0, 1]$ is the discount factor to reduce the value of future rewards</li>
-<li>$s&rsquo;$ is the resulting next state</li>
-<li>$\underset{a&rsquo;}{\arg\max}(Q[s&rsquo;, a&rsquo;])$ is the action which maximizes the Q-value among all possible actions $a&rsquo;$ from $s&rsquo;$, and</li>
-<li>$\alpha \in [0, 1]$ is the learning rate used to vary the weight given to new experiences compared to past Q-values. It’s typically around 0.2.</li>
-</ul>
-
-<h3 id="exploration">Exploration</h3>
-
-<p>The success of a Q-learning algorithm depends on the exploration of the state-action space.
-If you only explore a small subset of it, you might not find the best policies. One way
-to ensure that you explore as much as possible is to introduce randomness into selecting
-actions during the learning phase. So basically, you see first whether you want to take the
-action with the maximal Q value or choose a random action, then if you take a random
-action, each action gets a probability which decreases over subsequent iterations.</p>
-
-<h2 id="q-learning-for-trading">Q-Learning for Trading</h2>
-
-<p>Now that we know what Q-learning is, we need to figure out how to apply it to the context of
-trading. That means that we need to define what state, action, and reward mean. Actions
-are straightforward, as there are basically three of them:</p>
-
-<ul>
-<li>Buy</li>
-<li>Sell</li>
-<li>Do Nothing</li>
-</ul>
-
-<p>Our rewards can be daily returns or cumulative returns after a trade cycle (buy→sell).
-However, using daily returns will allow the agent to converge on a Q value more quickly,
-because if it waited until a sell, then it would have to look at all of the actions backwards
-until the buy to get that reward.</p>
-
-<p>Now, we just need to figure out how to determine state. Some good factors to determine
-state are:</p>
-
-<ul>
-<li>Adjusted Close/Simple Moving Average</li>
-<li>Bollinger Band value</li>
-<li>P/E ratio</li>
-<li>Holding stock (whether or not we’re holding the stock)</li>
-<li>Return since entry</li>
-</ul>
-
-<h3 id="discretization">Discretization</h3>
-
-<p>Our state must be a single number so we can look it up in the table easily. To make it
-simpler, we’ll confine the state to be an integer, which means we need to discretize each
-factor and then combine them into an overall state. Our state space is discrete, so the
-combined value is the overall state. Say we have a state like this:
-The discretized state could be: 2950.</p>
-
-<p><img src="/7646/images/table4.1.png" alt="Discretization" /></p>
-
-<p>To discretize, what we do is take the data for a factor over its range, then
-divide it into n bins. Then we find the threshold by iterating over the data by the step size
-and taking the value at each position.</p>
-
-<pre><code class="language-python">stepsize = size(data) / n
-data.sort()
-for i in range(0, steps):
-    threshold[i] = data[(i +1) * stepsize]
-</code></pre>
-
-<h3 id="problems-with-q-learning">Problems with Q-Learning</h3>
-
-<p>One main problem with Q-Learning is that it takes a lot of experience tuples to converge
-to the optimal Q value. This means the agent has to take many real interactions with the
-world (execute trades) to learn. The way this has been addressed is by using Dyna.</p>
-
-<h2 id="dyna-q">Dyna-Q</h2>
-
-<p>Dyna is designed to improve the convergence of Q learning by building a model of $T$ and $R$
-and then using Q learning to make decisions based on the model. However, the Q learning
-portion is still model-free, so it’s a mix of both.</p>
-
-<p>So we do the Q-Learning steps, but after we take an action, we update the model of $T$ and
-$R$ with the new data, simulate a bunch of experiences based on the model, then update $Q$
-based on these simulated experiences. To simulate the experiences, we basically generate
-random states and actions, and then find the new states/rewards based on the transition
-function and reward function.</p>
-
-<h3 id="learning-t">Learning T</h3>
-
-<p>To figure out a model for $T$, what we can do is count the number of times that a transition
-to $s&rsquo;$ by using the action $a$ in state $s$ occurred, then divide that by the total number
-of transitions to figure out the probability where $T_c$ is the number of times the transition occurred.</p>
-
-<div style="text-align: center;">
-  $T[s, a, s&#39;] = \dfrac{T_c[s, a, s&#39;]}{\sum_{i} T_c[s, a, i]}$
-</div>
-
-<h3 id="learning-r">Learning R</h3>
-
-<p>To finalize the model, we need to find our expected reward, $R[s, a]$. Whenever we interact
-with the world, we get an immediate reward, $r$. We can use this to update our model for
-$R$ in a similar way to updating the $Q$ values where $\alpha$ is again the learning rate:</p>
-
-<div style="text-align: center;">
-  $R&#39;[s, a] = (1 - \alpha)R[s, a] &#43; \alpha r$
-</div>
-
-<h3 id="conclusion">Conclusion</h3>
-
-<p>So a summary of how Dyna-Q works is the following:</p>
-
-<p><img src="/7646/images/fig4.3.png" alt="Dyna-Q" /></p>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[','\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    // Fix <code> tags after MathJax finishes running. This is a
-    // hack to overcome a shortcoming of Markdown. Discussion at
-    // https://github.com/mojombo/jekyll/issues/199
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
-</script>
+<h2 id="denial-of-service-attacks-overview">Denial of Service Attacks Overview</h2>
+
+<p><img src="/6250/images/fig17.0.png" alt="" /></p>
+
+<p>So in this lesson, we will talk about Denial of service attacks and defenses. We&rsquo;ll talk about what
+denial of service attacks are and various defenses. We&rsquo;ll talk about how to infer denial of service
+activity, and we&rsquo;ll talk about how to secure networks against denial of service attacks using
+Software Defined Networking.</p>
+
+<p><img src="/6250/images/fig17.1.png" alt="" /></p>
+
+<p>So what is denial of service? Denial of service is simply an attack that attempts to exhaust
+various resources. One resource that a Denial of Service attack might exhaust is network
+bandwidth. Another is TCP connections. For example, a host might only have a limited number
+of TCP connections that it can open to various clients, or the Denial of Service attack might
+attempt to exhaust various server resources. For example, this victim might be a web server
+running complicated scripts to render web pages, and if the web server suddenly becomes the
+target of a bunch of bogus requests, the server may spend a lot of resources rendering pages for
+requests that are not legitimate. Before 2000, these Denial of Service attacks were typically
+single source. After 2000, with the rise of internet worms as we saw in an earlier lesson, these
+attacks could become distributed, effectively being launched from many attackers.</p>
+
+<p><img src="/6250/images/fig17.2.png" alt="" /></p>
+
+<p>Let&rsquo;s talk about three different types of defenses against denial of service attacks. First we have
+something called ingress filtering. Then we have something called URPF, or reverse path
+filtering checks. And then in the case of an attack on TCP connection resources, we can use
+something called TCP syn cookies to defend against Denial of Service. Let&rsquo;s suppose that we
+have a stub autonomous system whose IP prefix was 204.69.207.0/24. Now this is a stub
+network that has no other networks connected to it and this is the only IP address space that this
+network owns. Then, the router that is immediately upstream of that internet service provider can
+simply drop all traffic for which the source IP address is not in the IP address range of that
+particular network. So this is foolproof and it works at the edges of the internet where it&rsquo;s very
+easy to determine the IP address range that&rsquo;s owned by a downstream stub autonomous system.
+Unfortunately it doesn&rsquo;t work well in the core, where a particular router might have a lot of
+difficulty determining whether packets from a particular source IP address could be allowed on a
+particular incoming interface. So the solution that operators try to use in the core is to use the
+routing tables to determine whether a packet could feasibly arrive on a particular incoming
+interface. So if a router had a routing table that said all packets for 10. 0.1.0/24, should be sent
+via interface one, and all packets destined for 10.0.18.0/24 should be sent via interface two, then
+URPF says if we see a packet for/with a particular source IP address on an incoming interface
+that is different than where we would have sent the packet in the reverse direction, then we
+should go ahead and drop this packet. So the benefits of URPF is that it&rsquo;s automatic, but the</p>
+
+<p>drawbacks are that it requires symmetric routing. And we know from earlier lessons that routing
+in the internet is often asymmetric. Therefore in any situation where asymmetric routing is a
+possibility, it is not possible or reasonable to use URPF. So we&rsquo;ve talked about ingress filtering
+and URPF checks, and let&rsquo;s now talk about the use of Syn cookies to defend against TPC based
+denial of service attacks.</p>
+
+<h2 id="tcp-3-way-handshake-review">TCP 3-Way Handshake Review</h2>
+
+<p><img src="/6250/images/fig17.3.png" alt="" /></p>
+
+<p>So in a typical TCP three-way handshake, the client sends a SYN packet to the server, the server
+responds with the SYN-ACK, and the client then returns with an ACK to the SYN-ACK, at
+which point the connection is established. The problem in a typical TCP three-way handshake is
+that the client can send a SYN and cause the server to allocate a socket buffer for that TCP
+connection. But then if the client never returns, the client can force the server to allocate many,
+many socket buffers simply by sending a lot of SYNs and never returning. In fact, these could
+even be from spoofed IP addresses. So in other words, the client has absolutely no accountability
+and no obligation to return to send the final ACK, and yet can cause the server to allocate
+resources.</p>
+
+<p><img src="/6250/images/fig17.4.png" alt="" /></p>
+
+<p>This is a problem, and the solution to this is called SYN cookies. In the TCP SYN cookie
+approach, when the server receives a SYN from the client, the server, instead of allocating a
+socket buffer for the tuple associated with the connection, the server keeps no state, and instead
+picks an initial sequence number for the connection that&rsquo;s a function of the client&rsquo;s IP address and
+port, and the server&rsquo;s IP address and port, as well as a random knots to prevent replay attacks. An
+honest client that returns can then reply with an acknowledgement with that sequence number in
+the packet. The server can check that sequence number simply by rehashing all of the
+information that it already has, thereby determining that the acknowledgement here corresponded
+to the previous SYN-ACK that it had sent the client without requiring the server to store any
+state. Only if the sequence number matches the one picked by the server in the SYN-ACK does
+the server actually establish the connection.</p>
+
+<h3 id="tcp-syn-cookie-quiz">TCP SYN Cookie Quiz</h3>
+
+<p><img src="/6250/images/fig17.5.png" alt="" /></p>
+
+<p>So as a quick quiz, what are some of the advantages of TCP Syn cookies? Is it that they can be
+applied to filter traffic in the network core? Is it that they can prevent the server from exhausting
+state by setting up socket buffers after receiving a TCP Syn? Or is it that they can defend against
+UDP flooding attacks?</p>
+
+<h3 id="tcp-syn-cookie-quiz-answer">TCP SYN Cookie Quiz Answer</h3>
+
+<p><img src="/6250/images/fig17.6.png" alt="" /></p>
+
+<p>TCP SYN cookies can prevent a server from exhausting state after receiving the initial TCP SYN
+packet.</p>
+
+<h2 id="inferring-denial-of-service-using-backscatter">Inferring Denial of Service using Backscatter</h2>
+
+<p><img src="/6250/images/fig17.7.png" alt="" /></p>
+
+<p>Let&rsquo;s talk about how to infer denial of service activity using a technique called backscatter. The
+idea behind backscatter is that when an attacker spoofs a source IP address, say on a TCP SYN
+flood attack, that the replies to that initial TCP SYN from the victim will go to the location of the
+source IP address. This replies to forged attack messages are called &ldquo;backscatter&rdquo;. Now the
+interesting thing about backscatter is that if we can assume that the source IP addresses are
+selected by the attacker at random, and we could set up a portion of the network where we could
+monitor this back scatter traffic coming back as SYN-ACK replies to forged source IP addresses,
+if we assume that these source IP addresses are picked uniformly at random, then the amount of
+traffic that we see as back scatter represents exactly a fraction that&rsquo;s proportional to the size of
+the overall attack. So, for example, if we monitor N IP addresses and we see M attack packets,
+then we expect to see here N over two to the 32 of the total back scatter packets, and hence of the
+total attack rate. If we want to compute the total attack rate, we simply invert this fraction. So for
+example, in this case, if our telescope were a slash eight, or two to the 24th IP addresses, we
+would simply multiply our observed attack rate x by two to the 32 divided by two to the 24 or
+255.</p>
+
+<h3 id="backscatter-quiz">Backscatter Quiz</h3>
+
+<p><img src="/6250/images/fig17.8.png" alt="" /></p>
+
+<p>As a quick quiz, let&rsquo;s suppose that our telescope is monitoring two to the 16th IP addresses. And
+let&rsquo;s suppose that in that telescope, we see 100,000 packets per second. What&rsquo;s the total attack
+rate?</p>
+
+<h3 id="backscatter-quiz-answer">Backscatter Quiz Answer</h3>
+
+<p><img src="/6250/images/fig17.9.png" alt="" /></p>
+
+<p>Since we&rsquo;re monitoring one 2 to the 16th of the entire internet, or 1 over 65,535 of the total
+internet, we simply need to take the rate that we&rsquo;ve observed and invert that. In this case, that rate
+would be roughly 6.5 billion packets per second.</p>
+
+<h2 id="automated-denial-of-service-attack-mitigation">Automated Denial of Service Attack Mitigation</h2>
+
+<p><img src="/6250/images/fig17.10.png" alt="" /></p>
+
+<p>In the assignment you will use a Pyretic controller to mitigate a DOS attack. We will use an
+extension of Pyretic called Py Resonance, which allows for composition of finite state machines
+that run various programs depending on the state of the network. Your network will start in a
+normal state, but will use an sFlow-based Denial of Service detector to indicate that the network
+has come under attack. Your sFlow event will cause the controller to change states, and hence it
+will install specific flow-table entries that mitigate the effects of the Denial of Service attack.
+The assignment that is spelled out on the home page has links to some more in-depth
+descriptions of this particular assignment and your task is writing a Py Resonance application to
+mitigate the DOS attack.</p>
 
 
 <footer class=" footline" >
@@ -1215,7 +992,6 @@ MathJax.Hub.Config({
             
                 
                     
-                    
                 
                 
 
@@ -1228,9 +1004,6 @@ MathJax.Hub.Config({
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1280,7 +1053,6 @@ MathJax.Hub.Config({
             
                 
                     
-                    
                 
                 
 
@@ -1291,25 +1063,6 @@ MathJax.Hub.Config({
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -1407,19 +1160,6 @@ MathJax.Hub.Config({
                     
 
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -1427,6 +1167,23 @@ MathJax.Hub.Config({
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1679,6 +1436,23 @@ MathJax.Hub.Config({
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1689,10 +1463,10 @@ MathJax.Hub.Config({
 
 
         
-            <a class="nav nav-prev" href="/7646/essential-economics/" title="Essential Economics"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/6250/spam/" title="Spam"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/6242/" title="6242" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/6250/introduction/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

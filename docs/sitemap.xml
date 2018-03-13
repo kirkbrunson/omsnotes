@@ -93,13 +93,58 @@
   </url>
   
   <url>
+    <loc>/6250/rate-limiting-and-traffic-shaping/</loc>
+    <lastmod>2018-03-13T17:05:14-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/6750/</loc>
     <lastmod>2018-03-06T20:08:51-05:00</lastmod>
   </url>
   
   <url>
+    <loc>/6250/content-distribution/</loc>
+    <lastmod>2018-03-13T17:05:23-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/6460/</loc>
     <lastmod>2018-03-06T20:09:01-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6250/software-defined-networking/</loc>
+    <lastmod>2018-03-13T17:05:46-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6250/programming-software-defined-networks/</loc>
+    <lastmod>2018-03-13T17:06:01-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6250/traffic-engineering/</loc>
+    <lastmod>2018-03-13T17:42:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6250/network-security/</loc>
+    <lastmod>2018-03-13T17:43:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6250/internet-worms/</loc>
+    <lastmod>2018-03-13T17:43:20-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6250/spam/</loc>
+    <lastmod>2018-03-13T17:43:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/6250/denial-of-service-dos/</loc>
+    <lastmod>2018-03-13T17:44:22-04:00</lastmod>
   </url>
   
   <url>

@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.37.1" />
+    <meta name="description" content="Documentation for Georgia Tech&#39;s OMSCS">
+<meta name="author" content="Kirk Brunson">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title> :: OMS Notes</title>
+    
+    
+    <link href="/css/nucleus.css?1520984693" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1520984693" rel="stylesheet">
+    <link href="/css/hybrid.css?1520984693" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1520984693" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1520984693" rel="stylesheet">
+    <link href="/css/auto-complete.css?1520984693" rel="stylesheet">
+    <link href="/css/theme.css?1520984693" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1520984693" rel="stylesheet">
+    
+      <link href="/css/theme-blue.css?1520984693" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1520984693"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/6250/rate-limiting-and-traffic-shaping/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="http://omsnotes.com"><h2 style="font-weight:bold;color:#FFF !important; margin-top: 10px">OMS: NOTES</h2></a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1520984693"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1520984693"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1520984693"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/42/" title="42" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/42/">
+          Welcome to OMSCS
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/7646/" title="7646" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/7646/">
+          Machine Learning for Trading
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/7646/python/" title="Python" class="dd-item ">
+        <a href="/7646/python/">
+        Python
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/7646/statistical-analysis-of-time-series-data/" title="Statistical Analysis of Time Series Data" class="dd-item ">
+        <a href="/7646/statistical-analysis-of-time-series-data/">
+        Statistical Analysis of Time Series Data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/7646/essential-economics/" title="Essential Economics" class="dd-item ">
+        <a href="/7646/essential-economics/">
+        Essential Economics
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/7646/machine-learning-algorithms/" title="Machine Learning Algorithms" class="dd-item ">
+        <a href="/7646/machine-learning-algorithms/">
+        Machine Learning Algorithms
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/6242/" title="6242" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6242/">
+          Data Visualization and Analytics
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/6601/" title="6601" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6601/">
+          Artificial Intelligence
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/7641/" title="7641" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/7641/">
+          Machine Learning
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/6476/" title="6476" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6476/">
+          Computer Vision
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/6750/" title="6750" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6750/">
+          Human-Computer Interaction
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/6460/" title="6460" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6460/">
+          Educational Technology
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/6250/" title="6250" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/6250/">
+          Computer Networking
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/introduction/" title="Introduction" class="dd-item ">
+        <a href="/6250/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/architecture-and-principles/" title="Architecture and Principles" class="dd-item ">
+        <a href="/6250/architecture-and-principles/">
+        Architecture and Principles
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/switching/" title="Switching" class="dd-item ">
+        <a href="/6250/switching/">
+        Switching
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/routing/" title="Routing" class="dd-item ">
+        <a href="/6250/routing/">
+        Routing
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/naming-addressing-and-forwarding/" title="Naming Addressing and Forwarding" class="dd-item ">
+        <a href="/6250/naming-addressing-and-forwarding/">
+        Naming Addressing and Forwarding
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/router-design/" title="Router Design" class="dd-item ">
+        <a href="/6250/router-design/">
+        Router Design
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/dns/" title="DNS" class="dd-item ">
+        <a href="/6250/dns/">
+        DNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/congestion-control-and-streaming/" title="Congestion Control and Streaming" class="dd-item ">
+        <a href="/6250/congestion-control-and-streaming/">
+        Congestion Control and Streaming
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/rate-limiting-and-traffic-shaping/" title="Rate Limiting and Traffic Shaping" class="dd-item active">
+        <a href="/6250/rate-limiting-and-traffic-shaping/">
+        Rate Limiting and Traffic Shaping
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/content-distribution/" title="Content Distribution" class="dd-item ">
+        <a href="/6250/content-distribution/">
+        Content Distribution
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/software-defined-networking/" title="Software Defined Networking" class="dd-item ">
+        <a href="/6250/software-defined-networking/">
+        Software Defined Networking
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/programming-software-defined-networks/" title="Programming Software Defined Networks" class="dd-item ">
+        <a href="/6250/programming-software-defined-networks/">
+        Programming Software Defined Networks
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/traffic-engineering/" title="Traffic Engineering" class="dd-item ">
+        <a href="/6250/traffic-engineering/">
+        Traffic Engineering
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/network-security/" title="Network Security" class="dd-item ">
+        <a href="/6250/network-security/">
+        Network Security
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/internet-worms/" title="Internet Worms" class="dd-item ">
+        <a href="/6250/internet-worms/">
+        Internet Worms
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/spam/" title="Spam" class="dd-item ">
+        <a href="/6250/spam/">
+        Spam
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/6250/denial-of-service-dos/" title="Denial of Service DoS" class="dd-item ">
+        <a href="/6250/denial-of-service-dos/">
+        Denial of Service DoS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built using <a href="http://gohugo.io">Hugo</a> and the <a href="https://github.com/matcornic/hugo-theme-learn">Learn Theme</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Improve this page' href="https://github.com/kirkbrunson/omsnotes/edit/master/content/6250/Rate-Limiting-and-Traffic-Shaping.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Improve this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/6250/'>6250</a> > Rate Limiting and Traffic Shaping
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#rate-limiting-traffic-shaping">Rate Limiting &amp; Traffic Shaping</a></li>
+<li><a href="#traffic-classification-and-shaping">Traffic Classification and Shaping</a>
+<ul>
+<li><a href="#source-classification">Source Classification</a></li>
+<li><a href="#vbr-quiz">VBR Quiz</a></li>
+<li><a href="#vbr-solution">VBR Solution</a></li>
+</ul></li>
+<li><a href="#traffic-shaping">Traffic Shaping</a>
+<ul>
+<li><a href="#leaky-bucket-traffic-shaping">Leaky Bucket Traffic Shaping</a></li>
+<li><a href="#r-t-traffic-shaping">(r, T) Traffic Shaping</a></li>
+<li><a href="#shaping-bursty-traffic-patterns">Shaping Bursty Traffic Patterns</a></li>
+<li><a href="#token-bucket-vs-leaky-bucket">Token Bucket vs Leaky Bucket</a></li>
+<li><a href="#policing-with-token-buckets">Policing With Token Buckets</a></li>
+<li><a href="#token-bucket-shaper-quiz">Token Bucket Shaper Quiz</a></li>
+<li><a href="#token-bucket-shaper-solution">Token Bucket Shaper Solution</a></li>
+</ul></li>
+<li><a href="#power-boost">Power Boost</a>
+<ul>
+<li><a href="#calculating-power-boost-rates">Calculating Power Boost Rates</a></li>
+<li><a href="#power-boost-quiz">Power Boost Quiz</a></li>
+<li><a href="#powerboost-solution">Powerboost Solution</a></li>
+<li><a href="#examples-of-powerboost">Examples of Powerboost</a></li>
+<li><a href="#effects-on-latency">Effects on Latency</a></li>
+</ul></li>
+<li><a href="#buffer-bloat">Buffer Bloat</a>
+<ul>
+<li><a href="#buffer-bloat-example">Buffer Bloat Example</a></li>
+</ul></li>
+<li><a href="#network-measurement">Network Measurement</a>
+<ul>
+<li><a href="#why-measure">Why Measure</a></li>
+<li><a href="#how-to-measure-passively">How to Measure (Passively)</a></li>
+<li><a href="#packet-monitoring">Packet Monitoring</a></li>
+<li><a href="#flow-monitoring">Flow Monitoring</a></li>
+<li><a href="#passive-traffic-monitoring-quiz">Passive Traffic Monitoring Quiz</a></li>
+<li><a href="#passive-traffic-monitoring-solution">Passive Traffic Monitoring Solution</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1></h1>
+          
+
+        
+
+
+
+
+<h2 id="rate-limiting-traffic-shaping">Rate Limiting &amp; Traffic Shaping</h2>
+
+<p>TCP congestion control responds to interpreted network events like packet loss, but does not
+provide a high-level control mechanism for congestion. In this section, we&rsquo;ll look at traffic
+shaping and network measurement, which are important tools for operating the network.</p>
+
+<h2 id="traffic-classification-and-shaping">Traffic Classification and Shaping</h2>
+
+<p><img src="/6250/images/fig9.0.png" alt="" /></p>
+
+<p>In this lesson we will talk about traffic classification and shaping. We&rsquo;ll first talk about different
+ways to classify traffic, then we&rsquo;ll talk about different traffic shaping approaches, then we&rsquo;ll talk
+about a traffic shaper called a leaky bucket traffic shaper, then we&rsquo;ll talk about an (r, T) traffic
+shaper. Then we&rsquo;ll talk about a token bucket traffic shaper, and finally, we&rsquo;ll talk about how to
+combine a token bucket shaper with a leaky bucket shaper to build what&rsquo;s called a composite
+shaper. The motivation here is to control network resources and ensure that no traffic flow
+exceeds a particular pre-specified rate.</p>
+
+<h3 id="source-classification">Source Classification</h3>
+
+<p><img src="/6250/images/fig9.1.png" alt="" /></p>
+
+<p>Traffic sources can be classified in a number of ways. Data traffic might be bursty, it might be
+weakly periodic, or it might also be regular. Audio traffic is typically continuous and strongly
+periodic. Video traffic is continuous, but it&rsquo;s often bursty due to the nature of how video is often
+compressed, as we saw in a previous lecture, and it may also be periodic. Typically, we think of
+taking these sources and classifying them into two kinds of traffic. One is a constant bit rate
+source or a CBR source. In a constant bit rate source of traffic, traffic arrives at regular intervals,
+and packets are typically the same size as they arrive, resulting in a constant bit rate of arrival.
+Audio is an example of a constant bit rate source. Many other sources of traffic are variable bit
+rate or VBR. Video and data are often variable bit rate. Typically when we shape CBR traffic,
+we shape it according to a peak rate. Variable bit rate traffic is shaped according to both an
+average rate, and a peak rate, where the average rate might actually be a small fraction of the
+peak rate. You can see that at certain times the peak rate might well exceed the average rate.
+Let&rsquo;s now talk about how to perform traffic shaping in a number of different ways.</p>
+
+<h3 id="vbr-quiz">VBR Quiz</h3>
+
+<p><img src="/6250/images/fig9.2.png" alt="" /></p>
+
+<p>So what are some examples of variable bit rate traffic? Audio streams, Video streams, or Data
+Transfers? Please check all that apply.</p>
+
+<h3 id="vbr-solution">VBR Solution</h3>
+
+<p><img src="/6250/images/fig9.3.png" alt="" /></p>
+
+<p>Video streams and data transfers can be variable bit rate or bursty. Audio tends to be constant bit
+rate with each packet being of a small, fixed packet size.</p>
+
+<h2 id="traffic-shaping">Traffic Shaping</h2>
+
+<h3 id="leaky-bucket-traffic-shaping">Leaky Bucket Traffic Shaping</h3>
+
+<p><img src="/6250/images/fig9.4.png" alt="" /></p>
+
+<p>One way of shaping traffic is with what&rsquo;s called a Leaky Bucket Traffic Shaper, where each flow
+has its own bucket. In a Leaky Bucket Traffic Shaper, data arrives in a bucket of size beta and
+drains from the bucket at rate rho. The parameter rho controls the average rate. Data can arrive
+faster or slower into the bucket, but it cannot drain at a rate faster than rho. Therefore, the
+maximum average rate that traffic can be sent is this smooth rate, rho. The size of the bucket
+controls the maximum burst size that a sender can send for a particular flow. So even though the
+average rate cannot exceed rho, at times, the sender might be able to send at a faster rate, as long
+as the total size of the burst does not exceed the size of the bucket. Or does not overflow the
+bucket. The leaky bucket allows flows to periodically burst, and the regulator at the bottom of
+the leaky bucket ensures that the average rate does not exceed the drain rate of the bucket. For
+example, for an audio application one might consider setting the size of the bucket to be 16
+kilobytes. So packets of one kilobyte would then be able to accumulate a burst of up to 16
+packets in the bucket. The regulator&rsquo;s rate of eight packets per second, however, would ensure
+that the audio rate would be smooth to an average rate not to exceed 8 kilobytes per second or
+64KBps. Setting a larger bucket size can accommodate a larger burst rate. Setting a larger value
+of rho can accommodate or enable a faster packet rate. The leaky bucket traffic shaper was
+developed in 1986 and soon to follow was a technique called (r, T) traffic shaping.</p>
+
+<h3 id="r-t-traffic-shaping">(r, T) Traffic Shaping</h3>
+
+<p><img src="/6250/images/fig9.5.png" alt="" /></p>
+
+<p>In (r, T) traffic shaping, traffic is divided into T-bit frames, and a flow can inject less than or
+equal to r bits in any T-bit frame. If the sender wants to send more than one packet of r bits, it
+simply has to wait until the next T-bit frame. A flow that obeys this rule has what is known as an
+(r, T) smooth traffic shape. In the case of (r, T) smooth traffic shaping, one cannot send a packet
+that&rsquo;s larger than r bits long. Unless T is very long, the maximum packet size may be very small.
+So the range of behaviors is typically limited to fixed rate flows. Variable flows have to request
+data rates that are equal to the peak rate, which is incredibly wasteful if you have to configure the
+shaper such that the average must support whatever peak rate the variable rate flow may send.
+The (r, T) traffic shaper is slightly relaxed from a simple leaky bucket because rather than
+sending one packet every time unit, the flow can send a certain number of bits every time unit.
+Now there&rsquo;s a question of what to do when a flow exceeds a particular rate. And typically what&rsquo;s
+done is that if a flow exceeds its rate, the excess packets in that flow are given a lower priority,
+and if the network is heavily loaded or congested, the packets from a flow that exceeds a rate
+may be preferentially dropped. Priorities might be assigned at the sender, or at the network. At
+the sender, the application may mark its own packet, since the application knows best which
+packets may be less important. In the network, the routers may mark packets with a lower
+priority, which is sometimes called policing.</p>
+
+<h3 id="shaping-bursty-traffic-patterns">Shaping Bursty Traffic Patterns</h3>
+
+<p><img src="/6250/images/fig9.6.png" alt="" /></p>
+
+<p>Sometimes we may want to shape bursty traffic patterns allowing for bursts to be sent on the
+network, but still ensuring that the flow does not exceed some average rate. For this we might
+use what&rsquo;s called a token bucket. In a token bucket, Tokens arrive in a bucket at a rate rho, and
+beta is again the capacity of the bucket. Now, traffic may arrive at an average rate
+lambda_average, and a peak rate lambda_peak. Traffic can be sent by the regulator as long as
+there are tokens in the bucket. To consider the difference between a token bucket and a leaky
+bucket, consider sending a packet of size b That&rsquo;s less than beta. If the token bucket is full, the
+packet is sent, and b tokens are removed. If the bucket is empty though, the packet must wait
+until b tokens drip into the bucket. If the bucket is partially full, well, then it depends. If the
+number of tokens in the bucket exceed little b, then the packet is sent immediately. Otherwise
+we have to wait until there are little b tokens in the bucket before we can send the packet.</p>
+
+<h3 id="token-bucket-vs-leaky-bucket">Token Bucket vs Leaky Bucket</h3>
+
+<p><img src="/6250/images/fig9.7.png" alt="" /></p>
+
+<p>Let&rsquo;s compare the difference between a token bucket and a leaky bucket. The token bucket
+permits traffic to be bursty, but it bounds it by the rate rho. On the other hand, a leaky bucket
+simply forces the bursty traffic to be smoothed. The bound in a token bucket is as follows. If our
+bucket size is beta, then we know that in any interval T, then the rate is always less than beta,
+that is, the maximum number of tokens that can be accumulated in the bucket, plus the rate at
+which tokens accumulate, times that time interval. We also know that the long term rate will
+always be less than rho. Token buckets have no discard or priority policies, whereas leaky
+buckets typically implement priority policies for flows that exceed the smoothing rate. Both are
+relatively easy to implement, but the token bucket is a little bit more flexible since it has some
+additional parameters that we can use to configure burst size. One of the limitations of token
+buckets is the fact that in any traffic interval of length T, the flow can send beta plus T times rho
+tokens of data. If a network tries to police the flows by simply measuring their traffic over
+intervals of length T, the flow can cheat by sending this amount of data in each interval.
+Consider, for example, an interval of twice this length. Well, if the flow can send beta plus T
+times rho in each interval, then over 2T the flow can consume 2 times beta plus tau times rho
+tokens. But actually this is greater than how much the flow is actually supposed to be able to
+send which is beta plus 2T times rho. So policing traffic being sent by token buckets is actually
+rather difficult. So, token buckets allow for long bursts, and if the bursts are of high priority
+traffic, they are difficult to police and may interfere with other high priority traffic. So there&rsquo;s
+some need to limit how long a token bucket sender can monopolize the network.</p>
+
+<h3 id="policing-with-token-buckets">Policing With Token Buckets</h3>
+
+<p><img src="/6250/images/fig9.8.png" alt="" /></p>
+
+<p>So, to apply policing to Token Buckets, what&rsquo;s often done is to use what&rsquo;s called a Composite
+Shaper, which is to combine a Token Bucket Shaper with a Leaky Bucket. The combination of
+the Token Bucket Shaper with the Leaky Bucket Shaper allows for good policing. Confirming
+that the flow&rsquo;s data rate does not exceed the average data rate allowed by the smooth Leaky
+Bucket is easy, but, the implementation is more complex since each flow now requires two
+counters and two timers. One timer and one counter for each bucket.</p>
+
+<h3 id="token-bucket-shaper-quiz">Token Bucket Shaper Quiz</h3>
+
+<p><img src="/6250/images/fig9.9.png" alt="" /></p>
+
+<p>So as a quick quiz, suppose that we have a token bucket shaper, and suppose that the size of the
+bucket is 100 kilobytes, that rho is ten packets per second, and that packets are one kilobyte.
+Assume also that we are talking about an interval of one second. Remember than in any given
+interval, a flow can never send more than beta plus tau times rho bits of data. Please give your
+answer in kilobits per second. Keeping in mind that one byte is eight bits.</p>
+
+<h3 id="token-bucket-shaper-solution">Token Bucket Shaper Solution</h3>
+
+<p><img src="/6250/images/fig9.10.png" alt="" /></p>
+
+<p>So the maximum rate would be 100 kilobytes times 1 second plus 10 packets per second times
+10 kilobytes, or 110 kilobytes, which is 880 kilobits in one second.</p>
+
+<h2 id="power-boost">Power Boost</h2>
+
+<p><img src="/6250/images/fig9.11.png" alt="" /></p>
+
+<p>In this lesson we&rsquo;ll talk about Power Boost which is a traffic shaping mechanism that was first
+deployed in commercial broadband networks in June 2006 by Comcast. The Power Boost allows
+a subscriber to send at a higher rate for a brief period of time. So if you subscribed at a rate of ten
+megabits per second, then Power Boost might allow you to send at a higher rate for some period
+of time before being shaped back to the rate at which you were subscribed at. So, Power Boost
+targets the Spare Capacity in the network for use by subscribers who don&rsquo;t put a sustained load
+on the network. There are two types of Power Boosts. If the rate at which the user can achieve
+during this burst window is set to not exceed a particular rate. Then we say that the policy is
+capped Power Boost, otherwise the policy, or the shaping, is called uncapped Power Boost. Now
+in the uncapped setting, the configuration is simple and as we described in the last lesson. The
+area here is the Power Boost bucket size. That&rsquo;s the maximum amount of traffic that can be sent
+that exceeds the sustained rate. The maximum sustained traffic rate is simply Rho, as we&rsquo;ve
+defined it before.</p>
+
+<p><img src="/6250/images/fig9.12.png" alt="" /></p>
+
+<p>Now suppose that we wanted to cap the rate that the sender could send during the power boost
+window. Well all we need to do in that case is to simply apply a second token bucket with
+another value of Rho. That token bucket limits the peak sending rate for Power Boost eligible
+packets to the rate Rho C, where Rho C is larger than Rho. Remember that this value of Rho also
+affects how quickly tokens can refill in the bucket, so it also plays the role in the maximum rate
+that can be sustained during a power boost window.</p>
+
+<h3 id="calculating-power-boost-rates">Calculating Power Boost Rates</h3>
+
+<p><img src="/6250/images/fig9.13.png" alt="" /></p>
+
+<p>Suppose that a sender is sending at some rate r, which is bigger than the sustained rate R that
+they are allowed to be sending it, and suppose that our bucket size is beta. Then how long can a
+sender send at the rate r that exceeds the sustained rate? In other words, what is the value of d?
+We know that the bucket size, beta, as shown in the shaded green area, is simply d times r minus
+the sustained rate R. So a sender can send at the rate, little r, that exceeds the sustained rate, R,
+for beta divided by r minus R sustained. Now based on what we&rsquo;ve learned here, let&rsquo;s just take a
+quick quiz.</p>
+
+<h3 id="power-boost-quiz">Power Boost Quiz</h3>
+
+<p><img src="/6250/images/fig9.14.png" alt="" /></p>
+
+<p>Suppose that the sustained rate that a subscriber subscribes to is ten megabits per second, but
+they like to burst at a rate of fifteen megabits per second. Suppose that the bucket size is one
+megabyte or eight megabits. How long can the sender send at the higher rate? Please give your
+answer in decimal form in seconds.</p>
+
+<h3 id="powerboost-solution">Powerboost Solution</h3>
+
+<p><img src="/6250/images/fig9.15.png" alt="" /></p>
+
+<p>One megabyte is eight megabits, and from our previous calculation, we know that the duration
+should be eight megabits, over five megabits per second, or 1.6 seconds.</p>
+
+<h3 id="examples-of-powerboost">Examples of Powerboost</h3>
+
+<p><img src="/6250/images/fig9.16.png" alt="" /></p>
+
+<p>In the Bismark Project at Georgia Tech, which you can go check out at <a href="http://projectbismark.net,">http://projectbismark.net,</a>
+we&rsquo;ve done some measurements of Comcast Power Boosts in different home networks. Here are
+some real world examples of Power Boost&rsquo;s traffic shaping profile in four different home
+networks, each with a different cable modem as shown in the caption. You can see that different
+homes exhibit different shaping profiles. Some have a very steady pattern whereas others have a</p>
+
+<p>more erratic pattern. Interestingly you can see in some cases that there appear to be two different
+tiers of higher throughput rates.</p>
+
+<h3 id="effects-on-latency">Effects on Latency</h3>
+
+<p><img src="/6250/images/fig9.17.png" alt="" /></p>
+
+<p>Power Boost also has effect on the latency that uses perceive, as well as the loss rate. Here we&rsquo;ve
+shown Power Boost latency effect for two different users. The latency is shown in terms of round
+trip time in milliseconds and the loss rates are shown on the right side of the Y axis. Latencies
+are also shown in a log scale. In this particular experiment, we start sending traffic here and we
+stop sending traffic here, in both cases. We can see that, even though power boost allows you to
+just send at a higher traffic rate, actually users may experience high latency and loss over the
+duration that they&rsquo;re sending at a higher rate. The reason for this is that the access link may not
+be able to support the higher rate. So if a sender can only send at R sustained for an extended
+period of time but is allowed to burst at a rate r for some shorter period of time, then buffers may
+fill up and the resulting buffers may introduce additional delays in the network since packets are
+being buffered up rather than dropped. TCP senders can continue to send at higher rates, such as
+little r, without seeing any packet loss even though the access link may not be able to send at that
+higher rate. As a result, packets buffer up and users see higher latency over the course of the
+power boost interval. To solve this problem, you might imagine instead that a sender might
+shape it&rsquo;s rate never to exceed the sustained rate, big R. If it did this, then it could avoid seeing
+these latency effects. So, certain senders who are more interested in keeping latency under
+control than they are in sending at bursty volumes, may wish to run a traffic shaper in front of a
+power boost enabled link. So shaping traffic to a rate of less than this sustained rate R can
+prevent this buffering. More details about power boost and the experiments that we&rsquo;ve run to
+keep latency under control in its presence are available in a paper we wrote called Broadband
+Internet Performance, A View from the Gateway. Which appeared in Sigcomm 2011.</p>
+
+<h2 id="buffer-bloat">Buffer Bloat</h2>
+
+<p><img src="/6250/images/fig9.18.png" alt="" /></p>
+
+<p>In this lesson, we will talk just briefly about buffer bloat. We saw an example of buffer bloat in
+the last lesson where we explored the latency effects of power boost. In the example we
+explored, the sender could send at a rate r that was bigger than the sustained rate R without
+seeing packet loss. Now if there&rsquo;s a buffer in the network that can support this higher rate, what
+we&rsquo;ll see is that buffer will start filling up with packets. But this buffer can still only drain at the
+sustained rate R. So even though the sender might be able to send at a faster rate for a brief
+period of time in terms of throughput, all of those packets that the sender sent at that faster rate
+are queued up in line waiting to be sent. As these packets are waiting in this buffer, they&rsquo;ll see
+higher delays than they would see if they simply arrived at the front of the queue and could be
+sent immediately. The delay that the packet will see in the buffer is the amount of data in the
+buffer divided by the rate that the buffer can drain. These large buffers can introduce delays that
+ruin the performance for time-critical applications such as voice and video. These large buffers
+actually show up all over the place: in home routers, in home WiFi devices or access points, in
+hosts on device drivers, and also in switches and routers. Let&rsquo;s take an example of buffer bloat
+that we observed in home routers as part of the Bismarck study that I described in the last lesson.</p>
+
+<h3 id="buffer-bloat-example">Buffer Bloat Example</h3>
+
+<p><img src="/6250/images/fig9.19.png" alt="" /></p>
+
+<p>In the example we&rsquo;ve shown here, we have three different DSL routers. The y axis shows the
+round trip time, or the latency to a nearby server in milliseconds, and is again shown in a log
+scale. We started an upload at the time 30 seconds shown on the plot. Now you can see that
+different modems experience a huge increase in latency when we start this upload. Some of them
+experience a latency of as much as one second, up from a typical latency of about ten
+milliseconds. One particular modem saw a round trip latency of as high as ten seconds during
+uploads. Now to remind you what&rsquo;s going on here, is that the modem itself has a buffer. Your
+ISP may be upstream of that buffer, and your access link may be draining that buffer at a certain
+rate. TCP senders in your home will send until they see lost packets, but if the buffer&rsquo;s large, the
+senders won&rsquo;t actually see those lost packets until this buffer has already filled up. The senders
+continue to send at increasingly faster rates until they see a loss. As a result, packets that are
+arriving at this buffer see increasing delays, and senders continue to send at faster rates, because
+without packet loss they don&rsquo;t have a signal to slow down. There&rsquo;s several solutions to the buffer
+bloat problem. One is obviously to use smaller buffers, but given that we have a lot of deployed
+infrastructure, simply reducing the buffer size in deployed routers, modems, switches, home Wi-
+Fi devices, and so forth, is a tall order. The other thing that we can do is to use the traffic shaping
+methods that we have learned about. Consider that the buffer drains at a particular rate, which in
+this case is the rate of the uplink to the ISP. If we shape traffic such that traffic coming into the
+access link never exceeds the uplink that the ISP has provided us, then the buffer will never fill.
+Thus, by shaping traffic at the home router such that the rate that traffic is sent to the ISP never
+exceeds the rate of the uplink, the modem buffer will never actually fill up. This type of shaping
+can be done on many open WRT capable routers, including the Bismark routers that we&rsquo;ve
+developed here at Georgia Tech.</p>
+
+<h2 id="network-measurement">Network Measurement</h2>
+
+<p><img src="/6250/images/fig9.20.png" alt="" /></p>
+
+<p>In this lesson we&rsquo;ll be talking about network measurement, or how to see what traffic is being
+sent on the network. There are two types of network measurement. One is passive measurement.
+In passive measurement we collect packets, flow statistics, and so forth, of traffic that is already
+being sent on the network. So, this might include packet traces, flow statistics, or application
+level logs. In active measurement, we inject additional traffic into the network to measure
+various characteristics of the network. So we&rsquo;ve seen some examples of active measurement
+already, such as in the previous lessons where we actively sent traffic on the network to measure
+speeds of downloads. Other common active measurement tools include those such as ping, and
+traceroute. Ping is often used to measure the delay to a particular server, and traceroute is often
+used to measure the network level, or the IP level path between two hosts on the network.</p>
+
+<h3 id="why-measure">Why Measure</h3>
+
+<p><img src="/6250/images/fig9.21.png" alt="" /></p>
+
+<p>So why do we want to measure the traffic on the network? One reason might be billing. So for
+example, we might want to charge a customer based on how much traffic they&rsquo;ve sent on a
+network. In order to do so, we need to passively measure how much traffic that customer is
+sending. Here&rsquo;s an example of measurements of inbound and outbound traffic volumes on a link
+on the Georgia Tech campus network. The Y axis is shown in bits per second, and the X axis is
+the time of day. Now, a user might be billed based on how much traffic they send on the
+network. A common mode of billing is called 95th Percentile billing, where a customer pays for
+what&rsquo;s called a committed information rate, or CIR, and throughput is measured every five
+minutes. The customer, then, may be billed on the 95th percentile of these five minute samples.
+So if we were to bill on the 95th percentile of inbound traffic, we might approximate that 95th
+percentile by the orange line I&rsquo;ve drawn here. And the customer might be billed at this rate, even
+though they&rsquo;re allowed to sometimes burst at higher rates. Another common reason to measure is
+security. For example, network operators may want to know the type of traffic that&rsquo;s being sent
+on the network so they can detect rogue behavior. A network operator may want to measure
+traffic on the network to detect compromised hosts or the presence of Botnets or Denial of
+Service attacks, two phenomena that we&rsquo;ll talk about later on in the course. For the rest of this
+lesson, since we focused a lot on performance measurement already, I will mainly focus on
+passive traffic data measurement.</p>
+
+<h3 id="how-to-measure-passively">How to Measure (Passively)</h3>
+
+<p><img src="/6250/images/fig9.22.png" alt="" /></p>
+
+<p>Let&rsquo;s talk about how to perform passive Network Traffic Management. One way to do this is
+using the Packet and Byte Counters provided by the Simple Network Management Protocol.
+Many network devices provide what&rsquo;s called a Management Information Base, or a MIB that can
+be polled or queried for particular information. One common use for SNMP is to poll a particular
+Interface on a Network Device for the number of Bytes or Packets that it sent. By periodically
+polling, we can then determine the rate at which Traffic is being sent on a link by simply taking
+the difference in these Packet and Byte Counters over particular intervals. The advantage of
+SNMP is that it&rsquo;s fairly ubiquitous. It&rsquo;s supported on essentially all Networking Equipment and
+there are many products for polling and analyzing SNMP data. On the other hand, it&rsquo;s fairly
+coarse and you cannot express complex queries on the data. It&rsquo;s coarse in the sense that because
+we are just polling Byte or Packet Counts on the Interface, we can&rsquo;t ask specific questions such
+as how much traffic has been sent by a particular host or by a particular flow. Two other ways to
+measure passively are by monitoring at a packet granularity, whereby monitors can see full
+packet contents or at least headers, or at a flow level where a monitor may see specific statistics
+about individual flows in the network. Let&rsquo;s now talk a little bit about packet and Flow
+Monitoring.</p>
+
+<h3 id="packet-monitoring">Packet Monitoring</h3>
+
+<p><img src="/6250/images/fig9.23.png" alt="" /></p>
+
+<p>So in packet monitoring, a monitor might see the full packet contents, or at least the packet
+headers that traverse a particular link. Common ways of performing packet monitoring that you
+may have tried yourself include tcpdump, ethereal, or wireshark. And in some of the exercises,
+you&rsquo;ll get a chance to explore packet monitoring with one of these tools. Sometimes packet
+monitoring is performed using expensive hardware that can be mounted in servers alongside the
+router that forward traffic through the network. In these cases, an optical link in the network is
+sometimes split so that traffic can be both sent along the network and sent to the monitor. Even
+though packet monitoring sometimes requires this expensive hardware on very high speed links,
+what you do when you run tcpdump or wireshark or ethereal is essentially the same thing. Your
+machine acts as a monitor on the local area network. And if any packets happen to be sent
+towards your network interface, the network interface records those packets. Now on a switch
+network, you wouldn&rsquo;t see many packets that weren&rsquo;t destined for your own mac address. But on
+a network where there&rsquo;s a lot of traffic being flooded, you might see quite a bit more traffic
+destined for an interface that you&rsquo;re using to monitor. So the advantages of packet monitoring is
+that it provides lots of detail. You can see timing information and information in the packet
+headers. Unfortunately, a disadvantage is that it&rsquo;s fairly high overhead. It is very hard to keep up
+with high speed links and often requires a separate monitoring device such as the monitoring
+card that we&rsquo;ve shown here. What if we are happy with a little less detail than packet monitoring
+can provide, but we can&rsquo;t afford its overhead? In that case, there is actually another approach that
+we can use called flow monitoring.</p>
+
+<h3 id="flow-monitoring">Flow Monitoring</h3>
+
+<p><img src="/6250/images/fig9.24.png" alt="" /></p>
+
+<p>In flow monitoring, a monitor which might actually be running on the router itself, records
+statistics per-flow. A flow consists of packets that share a common source and destination IP
+address, source and destination port, protocol type, TOS byte, and interface on which the packets
+arrive. A flow monitor can then record statistics for a flow that&rsquo;s defined by the group of packets
+that share these features. The flow records may also contain additional information, such as the
+next hop IP address and other information related to routing, such as the source and destination
+AS on which those packets appear to be coming from and going to, based on the routing tables,
+as well as the prefix that those packets matched in the routing table. Flow monitoring is much
+less overhead than packet monitoring, but it&rsquo;s also much more coarse than packet monitoring
+because the monitor does not see individual packets or payloads. Therefore, it&rsquo;s impossible to get
+certain information from flow monitoring such as packet timing information. In addition to
+grouping packets into flows based on the fact that they share common elements in their headers,
+typically packets are grouped into flows if they occur close together in time. So, for example, if
+packets that share common sets of header fields do not appear for a particular time interval, such
+as 15 or 30 seconds, the router simply declares the flow to be over, and sends a flow record to the
+monitor based on the group of packets that it&rsquo;s seen up to that point. Sometimes, to reduce
+monitoring overhead, flow level monitoring may also be accompanied with sampling. Sampling
+builds flow statistics based only on samples of the packets. So, for example, flows may be
+created based on one out of every ten or 100 packets, or a packet might be sampled with a
+particular probability and flow statistics might only be tabulated based on the packets that end up
+being sampled randomly from the total set of packets.</p>
+
+<h3 id="passive-traffic-monitoring-quiz">Passive Traffic Monitoring Quiz</h3>
+
+<p><img src="/6250/images/fig9.25.png" alt="" /></p>
+
+<p>So as a quick review, which of the following passive traffic monitoring methods, packet or flow
+sampling, can provide the following information? Timing information about packets, packet
+headers, and the number of bytes that each flow sends? Please check all boxes that apply.</p>
+
+<h3 id="passive-traffic-monitoring-solution">Passive Traffic Monitoring Solution</h3>
+
+<p><img src="/6250/images/fig9.26.png" alt="" /></p>
+
+<p>Only packet monitoring can provide timing information on a packet level, or packet headers. But
+both methods can actually provide the number of bytes in each flow. By definition, flow records
+record the number of bytes in each flow as an aggregate statistic, but if you had packet-level
+information, you could, of course, compute the statistic yourself.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/6250/congestion-control-and-streaming/" title="Congestion Control and Streaming"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/6250/content-distribution/" title="Content Distribution" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1520984693"></script>
+    <script src="/js/perfect-scrollbar.min.js?1520984693"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1520984693"></script>
+    <script src="/js/jquery.sticky.js?1520984693"></script>
+    <script src="/js/featherlight.min.js?1520984693"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1520984693"></script>
+    <script src="/js/highlight.pack.js?1520984693"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1520984693"></script>
+    <script src="/js/learn.js?1520984693"></script>
+    <script src="/js/hugo-learn.js?1520984693"></script>
+
+    <link href="/mermaid/mermaid.css?1520984693" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1520984693"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
