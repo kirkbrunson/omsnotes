@@ -12,6 +12,12 @@ weight: 2
 This course is part of the OMSCS ML specialization and is taught by the Quantitative Software Research Group at Georgia Tech. It covers pythons and introductory numerical computing, computational investing, and applied machine learning.
 
 
+## Instructors:
+
+- [Tucker Balch](https://www.cc.gatech.edu/people/tucker-balch)
+- [David Byrd](http://www.imtc.gatech.edu/people/c-david-byrd)
+
+
 ## Resources:
 - [Course website](http://quantsoftware.gatech.edu/Machine_Learning_for_Trading_Course)
 - [Calendar](https://docs.google.com/spreadsheets/d/e/2PACX-1vR61THm5f0Fkz7ybbsPUFmQdqCKcJW8RlYhdlqJOvv9At1tAMi8hkIs8oKH3VGI4hVIFqQOn-7YyiWQ/pubhtml?gid=0&single=true)
@@ -20,5 +26,4 @@ This course is part of the OMSCS ML specialization and is taught by the Quantita
 
 
 
-
-{{%attachments style="blue" title="Credit: much of this section comes from Ryan Babaie & Neil Hardy's guide. Download it here:" /%}}
+Credit: much of this section comes from Ryan Babaie & Neil Hardy's guide.
