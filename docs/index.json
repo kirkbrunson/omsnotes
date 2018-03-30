@@ -39,7 +39,7 @@
 	"title": "7646",
 	"tags": [],
 	"description": "",
-	"content": " About: This course is part of the OMSCS ML specialization and is taught by the Quantitative Software Research Group at Georgia Tech. It covers pythons and introductory numerical computing, computational investing, and applied machine learning.\nResources:  Course website Calendar Software Setup Q\u0026amp;A Study Guide    Credit: much of this section comes from Ryan Babaie \u0026amp; Neil Hardy\u0026#39;s guide. Download it here:   ml4t_guide.pdf  (1401 ko)    "
+	"content": " About: This course is part of the OMSCS ML specialization and is taught by the Quantitative Software Research Group at Georgia Tech. It covers pythons and introductory numerical computing, computational investing, and applied machine learning.\nInstructors:  Tucker Balch David Byrd  Resources:  Course website Calendar Software Setup Q\u0026amp;A Study Guide  Credit: much of this section comes from Ryan Babaie \u0026amp; Neil Hardy\u0026rsquo;s guide.\n"
 },
 {
 	"uri": "/6250/switching/",
@@ -137,7 +137,7 @@
 	"title": "6750",
 	"tags": [],
 	"description": "",
-	"content": "TODO: coming soon\u0026hellip; PR\u0026rsquo;s welcome\n"
+	"content": " About: This course is an introductory course on human-computer interaction. It does not presuppose any earlier knowledge of human-computer interaction, computer science, or psychology. The class covers three broad categories of topics within human-computer interaction: 1) the principles and characteristics of the interaction between humans and computers; 2) the techniques for designing and evaluating user-centered systems; and 3) current areas of cutting-edge research and development in human-computer interaction.\nCourse deliverables are a series of projects focusing on design principles and method as well as two exams.\nThis class is an elective and does not count towards the foundational degree requirement.\nInstructors:  David Joyner  Resources:  Course website Course calendar Required Reading  "
 },
 {
 	"uri": "/6250/content-distribution/",
@@ -151,7 +151,7 @@
 	"title": "6460",
 	"tags": [],
 	"description": "",
-	"content": "TODO: coming soon\u0026hellip; PR\u0026rsquo;s welcome\n"
+	"content": " About: This class is simultaneously an introductory course about educational technology and an advanced, project-oriented class on designing or researching technology\u0026rsquo;s intersection with education. As such, the course provides information about a large number of topics within educational technology, including pedagogical strategies, research methodologies, current tools, open problems, and broader issues. The scope of the material provided goes beyond what any one person could reasonably learn in a semester. Instead, you will select those areas that appeal to you or that support your ultimate project ideas. For example, if you’re interested in research, you may focus on the applicable research methodologies to your chosen area of investigation, relevant pedagogical strategies or theories, and the current state-of-the-art within that community. If you’re interested in design, you may focus on the relevant pedagogical strategies or theories for your chosen domain, the current popular tools within that domain, and open problems that need to be addressed.\nCourse deliverables are a series of essays/papers followed by a final project (group or individual). Students work with a mentor throughout the course to select a topic, conduct research, and complete the project.\nThis class counts towards the foundational degree requirements, and is an interaction elective in the Interactive Intelligence specialization.\nInstructors:  David Joyner  Resources:  Course website Course calendar Course wiki Edtech Project Archive  "
 },
 {
 	"uri": "/6250/software-defined-networking/",
