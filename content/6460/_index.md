@@ -18,11 +18,11 @@ This class counts towards the foundational degree requirements, and is an intera
 ## Instructors:
 
 - [David Joyner](http://www.davidjoyner.net/) 
-- 
+
 
 ## Resources:
 
 - [Course website](http://omscs6460.gatech.edu)
 - [Course calendar](http://omscs6460.gatech.edu/spring-2018/full-calendar)
 - [Course wiki](https://www.udacity.com/wiki/Educational_Technology)
-- [Project project archive](http://omscs-edtech.com)
+- [Edtech Project Archive](http://omscs-edtech.com)
