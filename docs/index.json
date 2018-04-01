@@ -207,7 +207,7 @@
 	"title": "6250",
 	"tags": [],
 	"description": "",
-	"content": " About:  todo  Resources:  todo Reading list:\u0026hellip;  "
+	"content": " About: This is a project based course examining and replicating research in the field of computer networks. Python, mininet, and pyretic are heavily used throughout.\nStaff:  Nick Feamster, Lecturer Sean Donovan, Head TA  Resources:  Course site  Reading list:  How To Read a Paper Design Philosophy of DARPA Internet Protocols End to End Arguments in System Design BGP Routing Policies in ISP Networks Are we there yet? 20 years of IPV6 CUBIC Congestion Control TCP Fast Open Application Flow Control in YouTube Video Streams MPTCP: How Hard Can It Be? Designing and Implementing a Deployable Multipath TCP  Paper Presentation  Sizing Router Buffers Controlling Queue Delay The Road to SDN: An Intellectual History of Programmable Networks Modular SDN Programming with Pyretic Jellyfish: Networking Data Centers Randomly PortLand: A Scalable Fault-Tolerant Layer 2 Data Center Network Fabric ASwatch: An AS Reputation System to Expose Bulletproof Hosting ASes How Secure are Secure Interdomain Routing Protocols? Hold-On: Protecting Against On-Path DNS Poisoning The Crossfire Attack  "
 },
 {
 	"uri": "/",
