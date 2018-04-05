@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>6250 on OMS Notes</title>
+    <link>/6250/</link>
+    <description>Recent content in 6250 on OMS Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 10 Mar 2018 20:19:22 -0500</lastBuildDate>
+    
+	<atom:link href="/6250/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>/6250/introduction/</link>
+      <pubDate>Sat, 10 Mar 2018 20:20:20 -0500</pubDate>
+      
+      <guid>/6250/introduction/</guid>
+      <description>Introduction: Welcome to Computer Networking We&amp;rsquo;ll be covering advanced concepts in networking such as software defined networking (SDN), data center networking (DCN) and content distribution. You&amp;rsquo;ll complete projects using a state of the art network emulator called mini-net to understand and explore these advanced concepts leading up to a final project replicating actual networking research.
+Computer Networking Welcome to the graduate course on computer networking. The primary goal of this course is to provide a survey of the necessary tools, techniques, and concepts to perform research in computer communications.</description>
+    </item>
+    
+    <item>
+      <title>Architecture and Principles</title>
+      <link>/6250/architecture-and-principles/</link>
+      <pubDate>Sat, 10 Mar 2018 20:31:22 -0500</pubDate>
+      
+      <guid>/6250/architecture-and-principles/</guid>
+      <description>Architecture &amp;amp; Principles We&amp;rsquo;ll begin our foray into networking by reviewing the history of the internet and its design principles. Networking today is an eclectic mix of theory and practice in large part because the early internet architects set out with clear goals and allowed flexibility in achieving them.
+With all that flexibility, does that mean we&amp;rsquo;ll see the rollout of IPv6 soon? Only in your dreams.
+A Brief History of the Internet In this lesson we will cover a brief history of the internet.</description>
+    </item>
+    
+    <item>
+      <title>Switching</title>
+      <link>/6250/switching/</link>
+      <pubDate>Sat, 10 Mar 2018 20:53:59 -0500</pubDate>
+      
+      <guid>/6250/switching/</guid>
+      <description>Switching At its core, a network serves to route packets between machines on the network. Let&amp;rsquo;s take a look at how packets are moved across networks. It&amp;rsquo;s more complicated than it sounds at first, but quite fascinating.
+That&amp;rsquo;s right. To even reach your screen, the packets that make up this video likely traveled across at least four or five networks, if not more.
+You&amp;rsquo;ll learn how that works in the routing videos on BGP, a routing protocol.</description>
+    </item>
+    
+    <item>
+      <title>Routing</title>
+      <link>/6250/routing/</link>
+      <pubDate>Sat, 10 Mar 2018 21:07:36 -0500</pubDate>
+      
+      <guid>/6250/routing/</guid>
+      <description>Routing Overview With your head wrapped around routing we&amp;rsquo;ll now take a look at the nuts and bolts that make routing possible: naming, addressing and forwarding.
+And you&amp;rsquo;ll start your first significant Mininet project. In the project you&amp;rsquo;ll investigate switched buffer sizing which can have an important effect on network performance.
+Internet Routing The next few lessons will cover internet routing. Contrary to what you might think, the internet is not a single network, but rather a collection of tens of thousands of independently operated networks, or autonomous systems, sometimes simply called ASes.</description>
+    </item>
+    
+    <item>
+      <title>Naming Addressing and Forwarding</title>
+      <link>/6250/naming-addressing-and-forwarding/</link>
+      <pubDate>Sun, 11 Mar 2018 19:59:19 -0400</pubDate>
+      
+      <guid>/6250/naming-addressing-and-forwarding/</guid>
+      <description>Naming, Addressing &amp;amp; Forwarding IP Addressing In this lesson we will be covering IP addressing. In particular we will be covering IPv4 address structure and allocation. IP stands for Internet Protocol, and version four is the version of the protocol that is widely deployed on the Internet to date. Each IP address is a 32-bit number. And that 32-bit number is formatted in what is called dotted quad notation. For example, the IP address for http://www.</description>
+    </item>
+    
+    <item>
+      <title>Router Design</title>
+      <link>/6250/router-design/</link>
+      <pubDate>Sun, 11 Mar 2018 20:21:10 -0400</pubDate>
+      
+      <guid>/6250/router-design/</guid>
+      <description>Router Design In this lesson, we will cover the design of big, fast, modern routers. Here&amp;rsquo;s a picture of two modern router chassis. On the left, we have a picture of the Cisco CRS-1, and on the right, we have a picture of the Juniper M320. The M320 has for some time been used at the border of the Georgia Tech network between Georgia Tech and the rest of the Internet.</description>
+    </item>
+    
+    <item>
+      <title>DNS</title>
+      <link>/6250/dns/</link>
+      <pubDate>Sun, 11 Mar 2018 20:26:43 -0400</pubDate>
+      
+      <guid>/6250/dns/</guid>
+      <description>DNS: Domain Name System Domain Name System Part 1 We&amp;rsquo;ll now have a look at the domain name system or DNS. The purpose of the domain name system is to map human readable names such http://www.gatech.edu to IP addresses such as 130.207.160.173. A name such as this is human readable and much easier to remember and type than an IP address. But in fact, the IP address is what&amp;rsquo;s needed to send traffic to the intended destination.</description>
+    </item>
+    
+    <item>
+      <title>Congestion Control and Streaming</title>
+      <link>/6250/congestion-control-and-streaming/</link>
+      <pubDate>Sun, 11 Mar 2018 20:33:32 -0400</pubDate>
+      
+      <guid>/6250/congestion-control-and-streaming/</guid>
+      <description>Lecture 6: Congestion Control, &amp;amp; Streaming In this section of the course we&amp;rsquo;ll learn about resource control and content distribution. Resource control deals with handling bandwidth constraints on links. And in this first section, we&amp;rsquo;ll focus on controlling congestion along links. To learn more about TCPA and congestion control, your Mininet project will explore what happens when congestion control goes wrong.
+Congestion Control Okay, we&amp;rsquo;re starting course two on congestion control and streaming.</description>
+    </item>
+    
+    <item>
+      <title>Rate Limiting and Traffic Shaping</title>
+      <link>/6250/rate-limiting-and-traffic-shaping/</link>
+      <pubDate>Tue, 13 Mar 2018 17:05:14 -0400</pubDate>
+      
+      <guid>/6250/rate-limiting-and-traffic-shaping/</guid>
+      <description>Rate Limiting &amp;amp; Traffic Shaping TCP congestion control responds to interpreted network events like packet loss, but does not provide a high-level control mechanism for congestion. In this section, we&amp;rsquo;ll look at traffic shaping and network measurement, which are important tools for operating the network.
+Traffic Classification and Shaping In this lesson we will talk about traffic classification and shaping. We&amp;rsquo;ll first talk about different ways to classify traffic, then we&amp;rsquo;ll talk about different traffic shaping approaches, then we&amp;rsquo;ll talk about a traffic shaper called a leaky bucket traffic shaper, then we&amp;rsquo;ll talk about an (r, T) traffic shaper.</description>
+    </item>
+    
+    <item>
+      <title>Content Distribution</title>
+      <link>/6250/content-distribution/</link>
+      <pubDate>Tue, 13 Mar 2018 17:05:23 -0400</pubDate>
+      
+      <guid>/6250/content-distribution/</guid>
+      <description>Content Distribution We&amp;rsquo;ve covered congestion control, which works within network protocols; traffic shaping, which is a high level network tool; and now we&amp;rsquo;ll look at content distribution, an internet-wide tool that enables websites and network operators to deliver data quickly and efficiently.
+And to wrap up this section of the course, your project will export TCP in its slow start state.
+The Web and Caching In this lesson, we&amp;rsquo;ll talk about the web and how web caches can improve web performance.</description>
+    </item>
+    
+    <item>
+      <title>Software Defined Networking</title>
+      <link>/6250/software-defined-networking/</link>
+      <pubDate>Tue, 13 Mar 2018 17:05:46 -0400</pubDate>
+      
+      <guid>/6250/software-defined-networking/</guid>
+      <description>Software Defined Networking Introduction Operations and Management Overview Welcome to the final third of the course. In the first section, you reviewed the basic building blocks of the internet, and in the second section, you learned how networks deal with large amounts of network traffic. In the final section, you&amp;rsquo;ll learn how network operators manage their networks. More importantly, these topics will introduce you to the forefront of networking research.</description>
+    </item>
+    
+    <item>
+      <title>Programming Software Defined Networks</title>
+      <link>/6250/programming-software-defined-networks/</link>
+      <pubDate>Tue, 13 Mar 2018 17:06:01 -0400</pubDate>
+      
+      <guid>/6250/programming-software-defined-networks/</guid>
+      <description>Programming Software Defined Networks Now that you know that network management is a tough, complicated process, we&amp;rsquo;re going to take a look at one of the most recent advancements in networking, software defined networking.
+Along the way, you&amp;rsquo;re going to complete two exciting projects in Mininet. In the first, you&amp;rsquo;ll write your own virtual switch. In the second, you&amp;rsquo;ll use a programming language designed for software-defined networking to create a firewall.</description>
+    </item>
+    
+    <item>
+      <title>Traffic Engineering</title>
+      <link>/6250/traffic-engineering/</link>
+      <pubDate>Tue, 13 Mar 2018 17:42:49 -0400</pubDate>
+      
+      <guid>/6250/traffic-engineering/</guid>
+      <description>Traffic Engineering We just completed our exploration of software defined networking, and now we&amp;rsquo;re jumping into traffic engineering. Traffic engineering is a fancy way of describing how network operators deal with large amounts of data flowing through their networks. Companies like Google are doing exciting work in this area, so be sure to pay attention to the instructor note section, where we&amp;rsquo;ll highlight exciting research papers.
+Traffic Engineering Overview This lesson covers traffic engineering.</description>
+    </item>
+    
+    <item>
+      <title>Network Security</title>
+      <link>/6250/network-security/</link>
+      <pubDate>Tue, 13 Mar 2018 17:43:02 -0400</pubDate>
+      
+      <guid>/6250/network-security/</guid>
+      <description>Networking Security We&amp;rsquo;re on our last stretch of the course with network security. Network security is an extremely important topic, especially considering high-profile data loss from large companies and government organizations.
+To accompany this section, you&amp;rsquo;ll be building a program in Pyretic that mitigates one of the specific attacks that we&amp;rsquo;re going to look at in this course.
+Need for Network Security We are beginning a lesson on network security.</description>
+    </item>
+    
+    <item>
+      <title>Internet Worms</title>
+      <link>/6250/internet-worms/</link>
+      <pubDate>Tue, 13 Mar 2018 17:43:20 -0400</pubDate>
+      
+      <guid>/6250/internet-worms/</guid>
+      <description>Internet Worms Types of Viruses and Worm Overview In this lesson we will talk about viruses and internet worms. Let&amp;rsquo;s first define what a virus is, and then define what a worm is. A virus is effectively an infection of an existing program that results in the modification of the original program&amp;rsquo;s behavior. A worm is code that propagates and replicates itself across the network. A worm is usually spread by exploiting flaws in existing programs or open services whereas viruses typically require user action to spread, for example, opening an attachment on an email or running an executable file that a friend gave you on an USB key.</description>
+    </item>
+    
+    <item>
+      <title>Spam</title>
+      <link>/6250/spam/</link>
+      <pubDate>Tue, 13 Mar 2018 17:43:41 -0400</pubDate>
+      
+      <guid>/6250/spam/</guid>
+      <description>Spam Okay, in this lesson, we will talk about spam or unwanted commercial email. Now, you might not think that you receive a lot of spam, but the fact of the matter is that most of it goes to your spam folder. So one might think, what&amp;rsquo;s the problem? Well, in fact, spam remains a scourge for network operators. In particular, someone has to design the filters that separate the good traffic from the bad traffic.</description>
+    </item>
+    
+    <item>
+      <title>Denial of Service DoS</title>
+      <link>/6250/denial-of-service-dos/</link>
+      <pubDate>Tue, 13 Mar 2018 17:44:22 -0400</pubDate>
+      
+      <guid>/6250/denial-of-service-dos/</guid>
+      <description>Denial of Service Attacks Overview So in this lesson, we will talk about Denial of service attacks and defenses. We&amp;rsquo;ll talk about what denial of service attacks are and various defenses. We&amp;rsquo;ll talk about how to infer denial of service activity, and we&amp;rsquo;ll talk about how to secure networks against denial of service attacks using Software Defined Networking.
+So what is denial of service? Denial of service is simply an attack that attempts to exhaust various resources.</description>
+    </item>
+    
+  </channel>
+</rss>

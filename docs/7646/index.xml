@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>7646 on OMS Notes</title>
+    <link>/7646/</link>
+    <description>Recent content in 7646 on OMS Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 06 Mar 2018 20:07:06 -0500</lastBuildDate>
+    
+	<atom:link href="/7646/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python</title>
+      <link>/7646/python/</link>
+      <pubDate>Tue, 06 Mar 2018 20:09:09 -0500</pubDate>
+      
+      <guid>/7646/python/</guid>
+      <description>Python: Numpy &amp;amp; Pandas Dataframes A dataframe is a data structure in pandas that allows multiple datasets to be mapped to the same indices. For example, a data frame that maps dates to closing prices could be:
+    SPY AAPL GOOG GLD     2000-01-09 101.01 50.89 NaN NaN   2000-01-10 100.05 50.91 NaN NaN   &amp;hellip; &amp;hellip; &amp;hellip; &amp;hellip; &amp;hellip;   2015-12-31 200.</description>
+    </item>
+    
+    <item>
+      <title>Statistical Analysis of Time Series Data</title>
+      <link>/7646/statistical-analysis-of-time-series-data/</link>
+      <pubDate>Tue, 06 Mar 2018 20:09:17 -0500</pubDate>
+      
+      <guid>/7646/statistical-analysis-of-time-series-data/</guid>
+      <description>Statistical Analysis of Time Series Data Pandas makes it simple to perform statistical analysis on dataframes, which is extremely important in determining different indicators and acting as inputs to the learning algorithms.
+Global statistics For example, if you had a dataframe df1 which had the closing prices for various stocks over a given time period, you can retrieve an ndarray with the mean of the columns by just calling df1.</description>
+    </item>
+    
+    <item>
+      <title>Essential Economics</title>
+      <link>/7646/essential-economics/</link>
+      <pubDate>Tue, 06 Mar 2018 20:09:26 -0500</pubDate>
+      
+      <guid>/7646/essential-economics/</guid>
+      <description>Essential Economics This chapter discusses terminology, stock market dynamics, and important indicators in economics. This will allow us to more accurately judge the value of an economic decision and make predictions on the market.
+Funds We’ll discuss three different types of funds: Exchange-Traded Fund (ETF), mutual funds, and hedge funds. Different types of funds are governed under different rules. ETFs are similar to stocks in that they are bought and sold at will like stocks- very liquid.</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Algorithms</title>
+      <link>/7646/machine-learning-algorithms/</link>
+      <pubDate>Tue, 06 Mar 2018 20:09:32 -0500</pubDate>
+      
+      <guid>/7646/machine-learning-algorithms/</guid>
+      <description>Machine Learning Algorithms In most cases, machine learning algorithms are focused on building a model. Then, the model can be used to take inputs and give outputs based on the model. The model is a tool to predict outputs based on the inputs. In our case, we will be using models to take information about stocks and predict their future prices.
+So we use machine learning to take historical data and generate a model.</description>
+    </item>
+    
+  </channel>
+</rss>

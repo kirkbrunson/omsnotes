@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>42 on OMS Notes</title>
+    <link>/42/</link>
+    <description>Recent content in 42 on OMS Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 06 Mar 2018 20:06:52 -0500</lastBuildDate>
+    
+	<atom:link href="/42/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
