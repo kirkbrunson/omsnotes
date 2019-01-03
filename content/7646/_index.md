@@ -24,6 +24,9 @@ This course is part of the OMSCS ML specialization and is taught by the Quantita
 - [Software Setup](http://quantsoftware.gatech.edu/ML4T_Software_Setup)
 - [Q&A Study Guide](https://kirkbrunson.github.io/ml4t-guide/)
 
-
+## Additional Viewing Material and Notes
+The following are student compiled notes and quick references on the additional viewing material assigned.
+- [Black Scholes Model and Trillion Dollar Bet](https://medium.com/@sengopal/review-of-the-trillion-dollar-bet-fall-of-ltcm-170bb9e30131)
+- [The Big Short Movie](https://medium.com/@sengopal/the-big-short-movie-for-a-trading-novice-2d67950cdafb)
 
 Credit: much of this section comes from Ryan Babaie & Neil Hardy's guide.
