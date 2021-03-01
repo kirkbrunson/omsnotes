@@ -12,7 +12,7 @@ This course is an introductory course on human-computer interaction. It does not
 
 Course deliverables are a series of projects focusing on design principles and method as well as two exams. 
 
-This class is an elective and does not count towards the foundational degree requirement.
+This class does count towards the foundational degree requirement.
 
 
 ## Instructors:
