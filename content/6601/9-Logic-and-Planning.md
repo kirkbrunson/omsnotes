@@ -1,0 +1,41 @@
+## 9 - Logic and Planning
+- Logic + Planning is a "core" of AI: allows reproducible reasoning and conclusions
+	- Key Q: how to use logic tools to better model the world?
+- Logic Background
+	- Propositional logic: (OR, AND, =>, !, <=>, etc.)
+		- Truth tables organize all possible outcomes
+		- Valid -- true in all cases
+		- Satisfiable -- true in some but not all cases
+		- Propositional logic cons:
+			- Only encodes T/F, difficult to encode uncertainty
+			- No objects
+			- No shortcuts -- need to go through all cases
+	- First-Order (FO) logic: solves objects/shortcuts problems of propositional logic
+		- Comparison of types of logic representation
+		- FO logic uses Constants (values, no contraints), Functions (mappings of values), Relations (descriptors).
+		- Syntax: like programming language
+			- Terms: values, variables, functions
+			- Sentences: T/F expressions using terms
+			- Logic Operators: e.g. AND, OR, !, =>, <=>, ()
+			- Quantifiers: For all, There exists, etc.
+		- "First-Order" since relations describe objects (values/variables). In higher-order, relations can describe relations
+	- Types of Logic Representations
+		- Atomic Representation: states grouped together into atomic units (e.g. in search), values with variables
+		- Factored Representation: states split into facts (e.g. propositional logic)
+		- Structured Representation: Atomic + schema of relations (e.g. modern database schemas)
+- Interleaving Planning and Execution
+	- Only execution without planning analogy: blindfolded person told to follow directions. Has ability to do steps, but without feedback from environment difficult to actually execute plan
+		- Especially important for environments that are: Stochastic (randomness), Multiagent, Parital Observability (full info not always available)
+		- Additional complications if knowledge is: Unknown, Hierarchical
+	- Partially observable state spaces occur due to limited sensors/information. Can model partially observable states by enumerating all possible state spaces and steps.
+	- Stochastic state transitions occur due to natural error (e.g. wheels slipping) and can be modeled using proability.
+	- Infinite Sequences: represent using tree structures, or while loops, or recursive function calls
+		- Unbounded solution if every leaf leads to goal (i.e. infinite # of solutions)
+		- Bounded solution if no loops (i.e. fixed sequences)
+- Classical Planning
+	- Given Start, Goal, State Space, World State, and Belief States, define pre-conditions necessary for an action to take place and define the effect of the action
+- Regression Search: start at goal state and work backwards
+	- Can be useful if there are few incoming edges to goal state (e.g. if you know what book to buy, only 1 path to buy a book. However starting from the goal of buying a book and searching, there are an infinite # of books to buy)
+- Plan-Space Search: look through possible plans by slowly-expanding through possibile scenarios
+	- Popular in 80's, however current approaches use more popular forward searches since easier to come-up with better heuristics (recall: generate heuristics by relaxing constraints on objective function)
+- Situation Calculus: syntax using FO Logic for planning. Combines states with logic operators and outcomes (successor0-state axioms)

@@ -1,0 +1,41 @@
+## 2 - Search
+
+- [Peter Norvig](http://norvig.com/) guest lecture! Dude is an AI superstar
+    - Interesting: "To me, AI is all about figuring out what to do when you don't know what to do"
+- A* is a very important algorithm to know well in AI
+- Search Completeness == guaranteed to find path to the goal
+- Problem Solving in AI
+    - Different types of complexity, in this case complexity for needing series of correct choices
+    - A Search Problem is composed of:
+        - Initial state
+        - Actions(s) -> {a\_1, a\_2, ...}
+        - Result(s, a) -> s'
+        - GoalTest(s) -> T/F if state s is a goal
+        - PathCost(s -a-> s-a->s) -> n
+            - StepCost(s, a, s') -> n
+    - In route-finding, can partition nodes as: 1) Explored, 2) Frontier (farthest explored), 3) Unexplored
+    - Search can be modeled as Tree-based or Graph-based Search, with variants based on how next-choice is picked
+- Types of search
+    - BFS - will find path with least amount of edges. Always expand shallowest path
+    - DFS - not optimal for min edges nor min cost, however big saving on memory. At depth `n`, only up to `n` nodes on path at given time as opposed to `2^n`
+    - Uniform Cost Search (Cheapest-First) - will find path with lowest cost. Keeps running total of path and always expand cheapest path. Keep going until goal path is popped-off of the frontier (which means shortest path is found)
+        - This is Dijkstra's algorithm!
+    - Greedy Best-First Search: similar to uniform cost, except only uses estimate distance to goal to account for cost. Takes much less memory to expand, however not guaranteed to be lowest cost
+    - A* Search: minimize function `f = g + h`, where `g` is the cost of path so far, and `h` is estimated distance to the goal
+        - This is the best! If the `h(s) < true cost`, i.e. `h` never overestimates, `h` is optimistic, `h` is admissable, etc.
+        - Picking a good `h` feels like Big O analysis: thinking about worst case cost. Also while want to never overestimate, the closer to real estimate the more effective the search
+- Examples from lecture: Romania Pathfinding, Vacuum World, Sliding Block Puzzle
+    - Interesting: in theory, heuristics can be auto-derived based on problem statement! Relaxing the original constraints and creating heuristics from relaxed constraints
+- Problems with Search
+    - Problem Solving w/ Search works well when:
+        - Fully Observable (know states)
+        - Domain must be known
+        - Domain must be discrete
+        - Domain must be deterministic (know results)
+        - Domain must be static (no external influence)
+    - Other sections of course will go-over cases when this doens't hold
+- Implementation Notes
+    - Representing graph: can do linked list w/ nodes
+    - Frontier: Priority Queue (to know which is best node to expand next), and Set (to know membership)
+    - Explored: Set (to know membership)
+- Takeaways From Peter's Take on AI: surround yourself with friends you want to be like, timing is important, pay attention to data, and get stuff done
