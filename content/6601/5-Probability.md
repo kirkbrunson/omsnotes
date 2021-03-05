@@ -19,7 +19,6 @@
         - `P(B)` is marginal likelihood, which expands to `P(B) = sum\_over\_a {P(B|A=a} * P(A=a)}
         - Note: `P(B|A) * P(A)` is equivalent to joint probability `P(A,B)`
     - Intuition: we have result B (e.g. test result) but actually want to understand A (e.g. cancer presence). We can solve by getting the likelihood that B happened given A over all possibilities for B
-    - **APPLIES THE SAME WITH MULTIPLE GIVEN CONDITIONS! Just focus on A and B**
     - When expanding terms: account for both cases if converting an unknown -> known
 - Conditional to Unconditional probability
     - Conditional probability definition: `P(A|B) = P(A, B) / P(B)`

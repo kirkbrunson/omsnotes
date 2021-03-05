@@ -37,7 +37,6 @@
     
     - When determining dependence, track top-down/bottom-up linkings, with links breaking at known information. I.e. dependent if linked by only unknown information
     - D-separation = Reachability. Reachable->Dependent if in active triplet, not Reachable->Independent if in inactive triplet. Path is active if all active triplets, however only need 1 inactive triplet for inactive path. All inactive paths = independence (otherwise not guaranteed)!
-        - ![4df34de6190774641c8c13dec5c7f2f1.png](:/882f5fbae92c4206bc45dc60c1140351)
 - Probabalistic Inference from Bayes Net -- I.e. answering probabalistic questions using Bayes Net!
     
     - Can model as three types of nodes: Evidence, Hidden (internal calculation nodes), Query. Can arbitrarily assign these to form functions as long as we have enough given parameters to calculate!

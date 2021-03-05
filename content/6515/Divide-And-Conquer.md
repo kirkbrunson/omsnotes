@@ -28,7 +28,7 @@
         - Set pivot p to median of S (by recursively calling FastSelect with S, n/10)
     2. Linear pass, partition array into <p, =p, >p
     3. Recursively search in <p OR \>p buckets depending on median index k = n/2 or (n-1)/2 for odd n.
-    ```
+
 	If k<= len(<p array) then search <p for kth element, else if k > (len(<p array) + len(=p array)) then search >p for (k - len(<p array) - len(=p array))th element.
         Else it's in =p array, so return p
     
