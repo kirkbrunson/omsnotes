@@ -1,0 +1,24 @@
+## 5 - Probability
+
+- Another AI superstar, [Sebastian Thrun](http://robots.stanford.edu/personal.html)
+- Probability is foundation of understanding how to deal with necessary uncertainty
+- Bayes Network: compact representation of a distribution over very large joint probability distribution across variables
+    - Extremely important foundation in understanding AI, used extensively in core products and more advanced AI structures
+- Probability Basics
+    - Binary Events
+    - Understand probability needs to be relative to *state* of problem. E.g. at least 3/4 heads from coin flips means either HHHH, or HHHT, or HHTH, or HTHH, or THHH
+    - Complimentary probability: `P(A) = p, then P(not A) = 1-p`
+    - Independence: `If X, Y independent: P(X)P(Y) = P(X, Y)`
+    - Dependence: `P(Y) = sum_over_i { P(Y | X=i) P(X=i) }`
+        - Also, `P(not X|Y) = 1 - P(X | Y)`
+- Bayes Rule
+    - `P(A|B) = P(B|A) * P(A) / P(B)`
+        - `P(A|B)` is posterior
+        - `P(B|A)` is likelihood
+        - `P(A)` is prior
+        - `P(B)` is marginal likelihood, which expands to `P(B) = sum\_over\_a {P(B|A=a} * P(A=a)}
+        - Note: `P(B|A) * P(A)` is equivalent to joint probability `P(A,B)`
+    - Intuition: we have result B (e.g. test result) but actually want to understand A (e.g. cancer presence). We can solve by getting the likelihood that B happened given A over all possibilities for B
+    - When expanding terms: account for both cases if converting an unknown -> known
+- Conditional to Unconditional probability
+    - Conditional probability definition: `P(A|B) = P(A, B) / P(B)`

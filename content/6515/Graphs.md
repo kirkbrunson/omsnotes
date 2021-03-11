@@ -1,0 +1,95 @@
+## GR1 - Strongly Connected Components
+
+- Graph algorithms: connected components via DFS-based algorithms  
+    - DFS Runtime: O(n+m)
+- Undirected graphs
+    - DFS approach: explore until all visited. Count number of connected component
+- Directed graphs
+    - DFS approach: same as undirected, except track pre/postorder numbers instead of connected component counts
+        - Pre-order = when node is first visited, Post-order = when node is done being explored. Generally focus on post-order, though both can be important
+        - Types of edges (when structuring nodes in DFS tree): Tree-edge (in-order of single path DFS), Back (back-up the tree), Forward, Cross (across tree). 
+        	- For edge z->w, post(z) > post(w), except for back edges with post(w) > post(z)
+    - Cycles exist iff DFS tree has a back edge. True b/c DFS tree is unidirectionally connected at start, so having a back edge means there's a cycle
+    - DAG = directed acyclic graph, so no cycles and no back-edges!
+        - Topological sort: order vertices so all edges go lower-> higher. Find this by just running DFS and sort by decreasing postorder number
+        - Types of vertices: source=no incoming, sink=no outgoing. All DAGs must start with a source and end with a sink
+    - Alternate topological sort for general directed graphs: 1) find a sink, output and delete 2) repeat until graph is empty!
+        - Get initial sink by running DFS on reverse graph, see below Lemma for explanation
+    - SC - define strongly connected for vertices v, w if there's a path v->w and w->v. SCCs = strongly connected components = set of subgraphs that compose maximal set of strongly connected vertices
+        - Finding SCC: modify alternate topological sort algorithm for sink SCC. Nice b/c if we find a node in sink SCC, exploring that node will give us the entire component!
+    - Lemma: in general directed graph, after running full DFS vertex with highest postorder is a source (though lowest not necessarily a sinks)
+        - Use this to find sinks in original graph by reversing the graph, then run DFS! Then sort by decreasing postorder and use order to evaluate DFS on original graph. Gets all SCCs in reverse-topological order
+    - Lemma: given SCC1->SCC2, SCC1 has higher max postorder # than SCC2 (intuition: either search must end in SCC1 since it starts there, or it is explored after all of SCC2 in which all postorder #s are higher)
+    - Lemma: Vertex with highest post # lies in source SCC
+- BFS/Dijkstra's
+    - While DFS establishes connectivity and we can calculate start, BFS needs a start vertex specified. Dijsktra's also requires all positive edge lengths
+    - BFS: O(n+m), gets all distances from start vertex to other vertices
+    - Dijkstra's: O((n+m)log(n)), gets shortest distance from start to all other vertices. Gets log(n) by using min-heap
+
+## GR2 - 2-SAT
+- SAT problem = Satisfiability. Analyzing boolean formulas in CNF (conjunctive normal form - all clauses are only ORs, and take AND of clauses) to see if it can be True
+	- k-SAT: given formula in CNF with n variables (where each var could be T or F literal), m clauses each at most size k, return assignment that gets T or None
+	- k-SAT is NP-Complete for k >= 3
+- Poly-time algorithm for 2-SAT: O(n+m) using a graph-based approach (details in lecture)
+
+## GR3 - Minimum Spanning Tree
+- Greedy approach: always take locally optimal move
+- Minimal Spanning Tree (MST) Problem: given undirected (!) weighted graph, find spanning tree (minimal size, connected) subgraph of min weight (for tree, sum of all edge weights)
+- Properties of Trees
+	- Connected DAG (when given undirected graph, can construct a DAG)
+	- Tree for n vertices has n-1 edges
+	- Exactly 1 path between every pair of vertices
+	- Any connected G=(V,E) with |E|=|V|-1 is a tree!
+- Kruskal's algorithm (greedy approach MST): consider lowest weight edges first (sort E by increasing weight), and add edges one-by-one to MST if it doesn't create a cycle
+	- Runtime: O(mlogn) using Union-Find data struct which is O(logn) lookup
+- "Cut" property lemma: a "cut edge" partitions vertices into two disjoint components. So for undirected G=(V,E), when constructing MST T=(V,X), assuming current partial solution t is correct (t = (s,x) is a MST), then adding the min cut edge e* between s and s_bar will still be a MST
+- Kruskal's correctness proof
+	- Use "Cut" property lemma to assert adding min cut edge e* maintains MST structure
+		- I.e. min cut edge e* given a current MST solution will always be part of a MST solution
+		- Proof by induction: if e* is in final MST T, then we're done! If it's not, then we're able to construct a different tree T' that is at worst the size of T (if T doesn't contain e*, it contains a different cut edge with a greater weight. So to make T', take T and add e*, drop a different cut-edge e' since this creates cycle. 
+	- Main idea from proof: having 2 cut edges creates a cycle, and each cut-edge forms its own MST when on its own (the best global MST is the min cut edge)
+- Prim's Algorithm: MST algoirthm that works like Dijkstra's (instead of globally picking min weight edge, start at arbitrary node and keep expanding with min weight)
+
+## GR4 - Markov Chains and PageRank
+- PageRank = "importance" (subjective) of a webpage
+	- Can interpret as stationary distrbution of webgraph represented as Markov Chain
+- Markov Chain overview: states and probability of state transition
+	- Outward edge weights sum to 1 (since probability distribution)
+	- N states (for HUGE N), NxN transition matrix P
+	- k-step Transitions: P^k 
+		- Intuition: P^k gives transition matrix of reaching a state after exactly k steps. Will be 0 if it is not possible
+		- Interesting: for large k, columns converge to same value (i.e. starting at state i, state j probabilities converge regardless of start state)
+	- Stationary distribution -- probability distribution that high k converges to
+		- "pi" is a stationary distribution
+		- Mixing time = how fast a distribution converges to stationary distribution
+		- Cases with multiple vs. unique stationary distribution
+		- Linear algebra interpretation: `pi = pi * P`
+- Ensuring unique stationary distribution
+	- Make aperiodic (not bipartite) by adding self-edge
+	- Make irreducible (only 1 SCC) by ensuring all probabilities in P > 0 (fully connected)
+	- If P is aperiodic and irreducible, then MC is Ergodic
+		- Ergodic MC has unique stationary distribution pi
+- What is pi?
+	- If P is symmetric, pi is uniform distribution (`pi(i) = 1/N`)
+	- Generally need to solve by multiplying matrices. Also if p(i,j)>0 then p(j,i)>0 must be true in order to solve
+- Random Walk: for edge y->x, init `P(y,x) = 1/|out(y)|`
+	- What is pi here? Satisfies `pi*P = pi`
+	- So for page `x`, `pi(x) = sum_over_in_x {1/|out(y)| * pi(y)}`
+		- Same definition+intuition as simple PageRank
+	- For random walk with restart, add probability of jumping to random page instead of equation above. Solves problem of many SCCs causing different starting points causing different ranks (in addition to making it fully connected)
+- PageRank Details
+	- Webgraph Notation: 
+		- V=webpages, directed edges E=hyperlinks
+		- Let `pi(x) = "rank" of page x`.
+		- Let `out(x) = neighbor vertices out of x`, `in(x) = neighbor vertices into x`
+	- Scoring System: for page `x`, get score `pi(x) = sum_over_in_x {1/|out(y)| * pi(y)}`
+		- Intuition: citation weight within page * importance of page
+	- Adding random walk: for probability alpha (damping factor), pick random page over all vertices with probability 1-alpha, otherwise pick random page over outgoing
+		- Alpha = 0.85 typically
+		- So with random walk, for edge y->x
+			- `P(y,x) = (1-alpha)/N` if y->x is not an edge
+			- `P(y,x) = (1-alpha)/N + alpha/|out(y)|` if y->x is an edge
+		- For sink nodes (no outgoing links), set alpha=0 for sink nodes (always pick random page)
+		- Formalized: `G' = alpha*G + (1-alpha)*Kn` where `Kn` represents the complete graph with all N vertices. For alpha<1 G' remains ergotic
+- Finding pi
+	- Compute mu_init * P^t for big t. This should be done in linear time (O(|E|)). Pick a reasonable mu_init (e.g. if updating week-to-week, use last week's mu)

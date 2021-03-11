@@ -1,0 +1,52 @@
+## 7 - Machine Learning
+
+- Machine Learning/Pattern Matching/Data Mining are similar concepts, with ML specializing in, well, learning
+    - Key Assumption: data is actually representative of problem you're trying to solve
+- KNN example: demonstrates importance of choosing parameters
+    - Be careful: tweaking parameters too much may overfit to your dataset! (less of a problem if dataset is very representative though)
+- Cross-Validation: training technique to prevent overfitting
+    - Tension between generalization and overfitting is a main challenge in ML
+    - Need to shuffle dataset to avoid ordering bias (which is more common than you think!)
+    - Leave-one-out CV is just one variant of CV which works for smaller datasets
+- Gaussian Distribution: the bell curve!
+    - Equation: `p(x) = 1/(rad(2pi) * sigma) * e^(-1/2((x-mu)/sigma)^2)`. Distribution works-out fairly nicely
+        - Interesting: generally grad classes have mean as A/B line
+    - Central Limit Theorem (very loosely defined): as more factors go into model, generally things can be approximated as gaussian!
+    - Old-school calculation: for two overlapping bell-curves, can get normalized probability by comparing heights at given point
+        - Decision Boundary: the point where probability is equal for overlapping distributions (so where curves intersect)
+- Measuring Classifier Success: compare to larger class in database! E.g. if 90% negative examples and 10% positive examples in database, the classifier needs to outperform 90% to be effective (since just guessing all negative gets 90% off-the-bat)
+- Classifier Error: happens at trailing tails near decision boundary. Can adjust decision boundary to optimize errors for real-world scenarios (e.g. improve TP rate by increasing FP)
+- Bayes Classifier
+    - Uses Bayes rule: `p(c_j|d) = p(d|c_j)p(c_j) / p(d)`, where `c_j` represents a class j and `d` is the probability of data occurring
+        - `p(c)` can be estimated with training data (use separate Bayes rule in calculations), and `p(d)` can be estimated as prior probability. `p(d|c_j)` is tricky - represent as a Bayes Net with `c_j` as top node leading to each data feature `d_i` and thus `p(d|c_j) = geom_sum{p(d_i|c_j)}` (since once c_j is known, rest are fully independent). Optimizing this is maximum likelihood with naive bayes assumption
+    - Maximum likelihood: picking class that maximizes equation above, assumes all classes have equal probability and picks most likely (ignores prior).
+- "No Free Lunch" Theorem: no single algorithm works best for all problems (depends on many things, e.g. complexity of underlying distribution)
+- Gaussian Mixture Model: use set of gaussians used to represent each class
+- Data Visualization: use as a first step to understand underlying data to pick best model
+- Decision Trees with Discrete Information
+    - Pretty simple to use and fast!
+    - Decision nodes, state nodes, and outcome nodes
+    - For continuous information, need to generate thresholds to use
+- Information Theory
+    - Simpler is better -- concept of compression (get same outcome with simpler model)
+    - Entropy: measure of uncertainty/unpredictability in variable. Defined `H(X)= -1*sum_1_to_n{p(x_i) * log(p(x_i))`
+        - Simplification for binary cases: `B(q) = -(qlog(q) + (1-q)log(1-q)`. So for `p` positive examples and `n` negative, we are calculating `B(p/(p+n))`
+    - Information gain: measure of entropy reduction after splitting on an attribute. Formalized as `Gain(A) = B(p/(p+n)) - Remainder(A)`, where `Remainder(A) = sum_1_to_d{(p_k + n_k)/(p+n) * B(p_k/(p_k+n_k))` and `d` is # of subsets from splitting. Remainder(A) is weighted sum of entropy after splitting on A
+- Random Forest: Training several decision trees and then voting on an answer
+    - "Bagging" technique (bootstrap aggregation)
+    - Randomly sample n times from Data and m times from attributes, learn tree, and repeat until you have enough trees. Unintuitively does better since randomness helps avoid overfitting!
+    - Can use Random Forest to get idea of which features are most valuable: use small tree size to make each tree examinable, and get large number of trees to see how stable features are
+- Boosting: combining many weak classifiers to generate a strong classifier
+    - Iteratively adjust weights of each classifier (`alpha_t = 1/2 ln((1-err_t) / err_t) > 0` where `err_t` is count of misclassified examples, then for each correctly classified multiply by `e^-alpha_t` otherwise `e^alpha_t`). Done once you reach convergence.
+    - Final model: `H(x) = sign(sum_over_t{alpha_t * h_t(x))}` where `h_t(x)` is classification from each weak classifier (for binary case, -1 or 1 for negative or positive) and `sign` returns 1 or 0 based on sign. Basically weighted sum with `alpha` as the weight!
+- Neural Nets: computational model inspired by neurons. Each unit ("neuron") has input links with bias weights, input function (takes prev output * bias weight), activation function (non-linear), and feeds output to output links
+    - Multilayer Nets: multiple layers of neurons. Previously infeasible but now doable with increase in computing power!
+        - Feed forward: no internal state, just forwards outputs to get final result (DAG)
+        - Recurrent: maintains state, has directed cycles
+    - Perceptron Learning: use back propagation with error function + gradient descent to update weights
+        - Add more layers (hidden layers) to model more complex distributions
+        - Unit of time for summing weight: "epoch"
+    - Interesting trend: perceptron generally does better with more examples, decisions tree generally do better with less
+- Deep learning: use hierarchical structures with multi-layer nets to solve problems
+    - Benefit in performance in some cases, however not easy to interpret results
+- Unsupervised learning: algorithm to determine classes with unlabeled data. E.g. k-means with expectation-maximization (EM), gaussian mixture model with EM
